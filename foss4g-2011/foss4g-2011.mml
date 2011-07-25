@@ -1,0 +1,78 @@
+{
+  "bounds": [
+    -180,
+    -90,
+    180,
+    90
+  ],
+  "center": [
+    -104.9238967895506,
+    39.76945897792666,
+    13
+  ],
+  "format": "png",
+  "interactivity": false,
+  "minzoom": 0,
+  "maxzoom": 22,
+  "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+  "Stylesheet": [
+    "style.mss",
+    "highway.mss"
+  ],
+  "Layer": [
+    {
+      "id": "land",
+      "name": "land",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "geometry": "polygon",
+      "Datasource": {
+        "file": "http://tilemill-data.s3.amazonaws.com/world_borders_merc.zip",
+        "id": "land",
+        "project": "foss4g-2011"
+      },
+      "class": ""
+    },
+    {
+      "geometry": "polygon",
+      "id": "landuse",
+      "name": "landuse",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "class": "",
+      "Datasource": {
+        "username": "aj",
+        "password": "aj",
+        "host": "localhost",
+        "port": "5432",
+        "dbname": "aj",
+        "table": "(select * from osm_new_landusages\norder by z_order asc, area desc\n) as landusages",
+        "key_field": "osm_id",
+        "geometry_field": "geometry",
+        "extent": "",
+        "type": "postgis",
+        "id": "landuse",
+        "project": "foss4g-2011"
+      }
+    },
+    {
+      "geometry": "linestring",
+      "id": "motorway_line",
+      "name": "motorway_line",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "class": "",
+      "Datasource": {
+        "username": "aj",
+        "password": "aj",
+        "host": "localhost",
+        "port": "5432",
+        "dbname": "aj",
+        "table": "osm_new_motorways",
+        "key_field": "osm_id",
+        "geometry_field": "geometry",
+        "extent": "",
+        "type": "postgis",
+        "id": "motorway_line",
+        "project": "foss4g-2011"
+      }
+    }
+  ]
+}
