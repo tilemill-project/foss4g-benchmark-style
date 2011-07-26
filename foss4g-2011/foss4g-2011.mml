@@ -6,9 +6,9 @@
     90
   ],
   "center": [
-    -105.12486934661793,
-    39.74913673269371,
-    11
+    -105.01672267913727,
+    39.63527424659962,
+    9
   ],
   "format": "png",
   "interactivity": false,
@@ -75,6 +75,42 @@
     },
     {
       "geometry": "linestring",
+      "id": "minorroad_line",
+      "name": "minorroad_line",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "class": "",
+      "Datasource": {
+        "table": "(select geometry, type, z_order\nfrom osm_new_minorroads\norder by z_order\n) as minor_roads",
+        "key_field": "",
+        "geometry_field": "geometry",
+        "extent": "",
+        "type": "postgis",
+        "dbname": "aj",
+        "host": "localhost",
+        "id": "minorroad_line",
+        "project": "foss4g-2011"
+      }
+    },
+    {
+      "geometry": "linestring",
+      "id": "mainroad_line",
+      "name": "mainroad_line",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "class": "",
+      "Datasource": {
+        "table": "(select geometry, type, z_order\nfrom osm_new_mainroads\norder by z_order ) as main_roads",
+        "key_field": "",
+        "geometry_field": "geometry",
+        "extent": "",
+        "type": "postgis",
+        "host": "localhost",
+        "dbname": "aj",
+        "id": "mainroad_line",
+        "project": "foss4g-2011"
+      }
+    },
+    {
+      "geometry": "linestring",
       "id": "motorway_line",
       "name": "motorway_line",
       "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
@@ -91,6 +127,24 @@
         "username": "aj",
         "password": "aj",
         "id": "motorway_line",
+        "project": "foss4g-2011"
+      }
+    },
+    {
+      "geometry": "linestring",
+      "id": "mainroad_fill",
+      "name": "mainroad_fill",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "class": "",
+      "Datasource": {
+        "table": "(select geometry, type, z_order\nfrom osm_new_mainroads\norder by z_order) as main_roads",
+        "key_field": "",
+        "geometry_field": "geometry",
+        "extent": "",
+        "type": "postgis",
+        "host": "localhost",
+        "dbname": "aj",
+        "id": "mainroad_fill",
         "project": "foss4g-2011"
       }
     },

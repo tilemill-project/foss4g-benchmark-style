@@ -1,11 +1,31 @@
 /*
 
 Z9
-
-- primary roads are grey lines
+- primary roads are yellow lines w/ casing
 
 Z10
-- rivers appear
-- primary roads have yellow fill
+- minor rivers appear
+- secondary roads are yellow lines w/ casing
+
+Zoom level <-> Scale Denominator
+zoomlevel  1   [scale-denominator<500000000] [scale-denominator>=200000000]
+zoomlevel  2   [scale-denominator<200000000] [scale-denominator>=100000000]
+zoomlevel  3   [scale-denominator<100000000] [scale-denominator>=50000000]
+zoomlevel  4   [scale-denominator<50000000]  [scale-denominator>=25000000]
+zoomlevel  5   [scale-denominator<25000000]  [scale-denominator>=12500000]
+zoomlevel  6   [scale-denominator<12500000]  [scale-denominator>=6500000]
+zoomlevel  7   [scale-denominator<6500000]   [scale-denominator>=3000000]
+zoomlevel  8   [scale-denominator<3000000]   [scale-denominator>=1500000]
+zoomlevel  9   [scale-denominator<1500000]   [scale-denominator>=750000]
+zoomlevel 10   [scale-denominator<750000]    [scale-denominator>=400000]
+zoomlevel 11   [scale-denominator<400000]    [scale-denominator>=200000]
+zoomlevel 12   [scale-denominator<200000]    [scale-denominator>=100000]
+zoomlevel 13   [scale-denominator<100000]    [scale-denominator>=50000]
+zoomlevel 14   [scale-denominator<50000]     [scale-denominator>=25000]
+zoomlevel 15   [scale-denominator<25000]     [scale-denominator>=12500]
+zoomlevel 16   [scale-denominator<12500]     [scale-denominator>=5000]
+zoomlevel 17   [scale-denominator<5000]      [scale-denominator>=2500]
+zoomlevel 18   [scale-denominator<2500]      [scale-denominator>=1000]
+
 
 */
