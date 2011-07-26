@@ -48,12 +48,12 @@
 #water_label[zoom>17] {
   text-name:'[name]';
   text-face-name:@sans;
-  text-fill:darken(@water,10);
+  text-fill:darken(@water,20);
   text-halo-fill:#fff;
   text-halo-radius:2;
   text-placement:interior;
   text-size:11;
-  text-wrap-width:40;
+  text-wrap-width:20;
 }
 
 /* ---- LANDUSAGES ---- */
@@ -72,7 +72,8 @@
   text-halo-radius:2;
   text-placement:interior;
   text-size:11;
-  text-wrap-width:40;
+  text-wrap-width:20;
+  [zoom>14] { text-size:12; }
 }
 
 /* ---- ROADS ---- */
@@ -88,4 +89,28 @@
   [zoom=11] { text-min-distance:70; }
   [zoom=12] { text-min-distance:80; }
   [zoom=13] { text-min-distance:100; }
+}
+
+#mainroad_label[type='primary'][zoom>12],
+#mainroad_label[type='secondary'][zoom>13] {
+  text-name:'[name]';
+  text-face-name:@sans;
+  text-placement:line;
+  text-fill:#222;
+  text-halo-fill:#fff;
+  text-halo-radius:1;
+  text-min-distance:60;
+  text-size:11;
+}
+
+
+#minorroad_label[zoom>14] {
+  text-name:'[name]';
+  text-face-name:@sans;
+  text-placement:line;
+  text-fill:#222;
+  text-halo-fill:#fff;
+  text-halo-radius:1;
+  text-min-distance:60;
+  text-size:11;
 }
