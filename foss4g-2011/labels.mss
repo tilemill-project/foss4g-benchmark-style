@@ -1,8 +1,9 @@
 /* ---- FONTS ---- */
 @sans: "Lucida Sans Regular","DejaVu Sans Book";
-@sans_bd: "Lucida Sans Demibold", "DejaVu Sans Bold";
+@sans_md: "Lucida Sans Demibold", "DejaVu Sans Book";
+@sans_bd: "Lucida Sans Bold", "DejaVu Sans Bold";
 @sans_it: "Lucida Sans Oblique", "DejaVu Sans Oblique";
-@sans_bd_it: "Lucida Sans Demibold Oblique", " DejaVu Sans Bold Oblique";
+@sans_bd_it: "Lucida Sans Bold Oblique", " DejaVu Sans Bold Oblique";
 
 /* ---- PLACES ---- */
 
@@ -37,3 +38,54 @@
 }
 
 /* ---- WATER BODIES ---- */
+
+#water_label[zoom>11][area>2000000],
+#water_label[zoom>12][area>1000000],
+#water_label[zoom>13][area>500000],
+#water_label[zoom>14][area>250000],
+#water_label[zoom>15][area>125000],
+#water_label[zoom>16][area>612500],
+#water_label[zoom>17] {
+  text-name:'[name]';
+  text-face-name:@sans;
+  text-fill:darken(@water,10);
+  text-halo-fill:#fff;
+  text-halo-radius:2;
+  text-placement:interior;
+  text-size:11;
+  text-wrap-width:40;
+}
+
+/* ---- LANDUSAGES ---- */
+
+#landuse_label[zoom>11][area>2000000],
+#landuse_label[zoom>12][area>1000000],
+#landuse_label[zoom>13][area>500000],
+#landuse_label[zoom>14][area>250000],
+#landuse_label[zoom>15][area>125000],
+#landuse_label[zoom>16][area>612500],
+#landuse_label[zoom>17] {
+  text-name:'[name]';
+  text-face-name:@sans;
+  text-fill:#000;
+  text-halo-fill:#fff;
+  text-halo-radius:2;
+  text-placement:interior;
+  text-size:11;
+  text-wrap-width:40;
+}
+
+/* ---- ROADS ---- */
+
+#motorway_label[type='motorway'][zoom>9],
+#motorway_label[type='trunk'][zoom>9] {
+  text-name:'[ref]';
+  text-face-name:@sans_bd;
+  text-placement:line;
+  text-fill:#444;
+  text-min-distance:60;
+  text-size:10;
+  [zoom=11] { text-min-distance:70; }
+  [zoom=12] { text-min-distance:80; }
+  [zoom=13] { text-min-distance:100; }
+}

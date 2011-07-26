@@ -13,8 +13,11 @@ Map { background-color:@water; }
 
 #land { polygon-fill:@land; }
 
+#water { polygon-fill:@water; }
+
 #landuse[type='forest'] { polygon-fill:@forest; }
 
+#landuse[type='golf_course'],
 #landuse[type='park'] { polygon-fill:@park; }
 
 #landuse[type='hospital'] { polygon-fill:@hospital; }
