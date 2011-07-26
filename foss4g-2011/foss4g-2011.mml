@@ -6,9 +6,9 @@
     90
   ],
   "center": [
-    -104.803240299223,
-    39.59824008361772,
-    10
+    -104.84654188155899,
+    38.81352952776849,
+    9
   ],
   "format": "png",
   "interactivity": false,
@@ -129,6 +129,42 @@
     },
     {
       "geometry": "linestring",
+      "id": "mainroad_line_gen0",
+      "name": "mainroad_line_gen0",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "class": "",
+      "Datasource": {
+        "table": "(select geometry, type\nfrom osm_new_roads_gen0\n) as road",
+        "key_field": "",
+        "geometry_field": "geometry",
+        "extent": "",
+        "type": "postgis",
+        "dbname": "aj",
+        "host": "localhost",
+        "id": "mainroad_line_gen0",
+        "project": "foss4g-2011"
+      }
+    },
+    {
+      "geometry": "linestring",
+      "id": "mainroad_line_gen1",
+      "name": "mainroad_line_gen1",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "class": "",
+      "Datasource": {
+        "table": "(select geometry, type\nfrom osm_new_roads_gen1\n) as road",
+        "key_field": "",
+        "geometry_field": "geometry",
+        "extent": "",
+        "type": "postgis",
+        "dbname": "aj",
+        "host": "localhost",
+        "id": "mainroad_line_gen1",
+        "project": "foss4g-2011"
+      }
+    },
+    {
+      "geometry": "linestring",
       "id": "mainroad_line",
       "name": "mainroad_line",
       "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
@@ -142,42 +178,6 @@
         "dbname": "aj",
         "host": "localhost",
         "id": "mainroad_line",
-        "project": "foss4g-2011"
-      }
-    },
-    {
-      "geometry": "linestring",
-      "id": "motorway_line_gen0",
-      "name": "motorway_line_gen0",
-      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
-      "class": "",
-      "Datasource": {
-        "table": "(select geometry, type\nfrom osm_new_motorways_gen0\n) as road",
-        "key_field": "",
-        "geometry_field": "geometry",
-        "extent": "",
-        "type": "postgis",
-        "dbname": "aj",
-        "host": "localhost",
-        "id": "motorway_line_gen0",
-        "project": "foss4g-2011"
-      }
-    },
-    {
-      "geometry": "linestring",
-      "id": "motorway_line_gen1",
-      "name": "motorway_line_gen1",
-      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
-      "class": "",
-      "Datasource": {
-        "table": "(select geometry, type\nfrom osm_new_motorways_gen1\n) as road",
-        "key_field": "",
-        "geometry_field": "geometry",
-        "extent": "",
-        "type": "postgis",
-        "host": "localhost",
-        "dbname": "aj",
-        "id": "motorway_line_gen1",
         "project": "foss4g-2011"
       }
     },
@@ -222,6 +222,42 @@
     },
     {
       "geometry": "linestring",
+      "id": "mainroad_fill_gen0",
+      "name": "mainroad_fill_gen0",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "class": "",
+      "Datasource": {
+        "table": "(select geometry, type\nfrom osm_new_roads_gen0\n) as road",
+        "key_field": "",
+        "geometry_field": "geometry",
+        "extent": "",
+        "type": "postgis",
+        "dbname": "aj",
+        "host": "localhost",
+        "id": "mainroad_fill_gen0",
+        "project": "foss4g-2011"
+      }
+    },
+    {
+      "geometry": "linestring",
+      "id": "mainroad_fill_gen1",
+      "name": "mainroad_fill_gen1",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "class": "",
+      "Datasource": {
+        "table": "(select geometry, type\nfrom osm_new_roads_gen1\n) as roads",
+        "key_field": "",
+        "geometry_field": "geometry",
+        "extent": "",
+        "type": "postgis",
+        "dbname": "aj",
+        "host": "localhost",
+        "id": "mainroad_fill_gen1",
+        "project": "foss4g-2011"
+      }
+    },
+    {
+      "geometry": "linestring",
       "id": "mainroad_fill",
       "name": "mainroad_fill",
       "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
@@ -235,42 +271,6 @@
         "dbname": "aj",
         "host": "localhost",
         "id": "mainroad_fill",
-        "project": "foss4g-2011"
-      }
-    },
-    {
-      "geometry": "linestring",
-      "id": "motorway_fill_gen0",
-      "name": "motorway_fill_gen0",
-      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
-      "class": "",
-      "Datasource": {
-        "table": "(select geometry, type\nfrom osm_new_motorways_gen0\n) as road",
-        "key_field": "",
-        "geometry_field": "geometry",
-        "extent": "",
-        "type": "postgis",
-        "dbname": "aj",
-        "host": "localhost",
-        "id": "motorway_fill_gen0",
-        "project": "foss4g-2011"
-      }
-    },
-    {
-      "geometry": "linestring",
-      "id": "motorway_fill_gen1",
-      "name": "motorway_fill_gen1",
-      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
-      "class": "",
-      "Datasource": {
-        "table": "(select geometry, type\nfrom osm_new_motorways_gen1\n) as roads",
-        "key_field": "",
-        "geometry_field": "geometry",
-        "extent": "",
-        "type": "postgis",
-        "host": "localhost",
-        "dbname": "aj",
-        "id": "motorway_fill_gen1",
         "project": "foss4g-2011"
       }
     },
