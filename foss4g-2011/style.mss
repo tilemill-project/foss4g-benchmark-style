@@ -1,6 +1,11 @@
+/* **************************************************************** */
+/* FOSS4G 2011 WMS BENCHMARK STYLE FOR MAPNIK                       */
+/* **************************************************************** */
+
 /* ---- PALETTE ---- */
 
 /* Landuse areas, etc */
+@cemetery:  #d1d1d1;
 @forest:    #c4d0bc;
 @hospital:  #e5c6c3;
 @land:      #f2efe9;
@@ -14,6 +19,8 @@ Map { background-color:@water; }
 #land { polygon-fill:@land; }
 
 #water { polygon-fill:@water; }
+
+#landuse[type='cemetery'] { polygon-fill:@cemetery; }
 
 #landuse[type='forest'] { polygon-fill:@forest; }
 
