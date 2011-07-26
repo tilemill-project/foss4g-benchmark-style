@@ -6,9 +6,9 @@
     90
   ],
   "center": [
-    -104.9238967895506,
-    39.76945897792666,
-    13
+    -105.12486934661793,
+    39.74913673269371,
+    11
   ],
   "format": "png",
   "interactivity": false,
@@ -17,7 +17,9 @@
   "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
   "Stylesheet": [
     "style.mss",
-    "highway.mss"
+    "highway.mss",
+    "labels.mss",
+    "notes"
   ],
   "Layer": [
     {
@@ -39,17 +41,35 @@
       "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
       "class": "",
       "Datasource": {
-        "username": "aj",
-        "password": "aj",
-        "host": "localhost",
-        "port": "5432",
-        "dbname": "aj",
-        "table": "(select * from osm_new_landusages\norder by z_order asc, area desc\n) as landusages",
-        "key_field": "osm_id",
+        "table": "(select geometry,type,z_order from osm_new_landusages\norder by z_order\n) as landusages",
+        "key_field": "",
         "geometry_field": "geometry",
         "extent": "",
         "type": "postgis",
+        "dbname": "aj",
+        "host": "localhost",
+        "port": "5432",
+        "username": "aj",
+        "password": "aj",
         "id": "landuse",
+        "project": "foss4g-2011"
+      }
+    },
+    {
+      "geometry": "linestring",
+      "id": "rail",
+      "name": "rail",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "class": "",
+      "Datasource": {
+        "table": "(select geometry,type\nfrom osm_new_railways\n) as railway",
+        "key_field": "",
+        "geometry_field": "geometry",
+        "extent": "",
+        "type": "postgis",
+        "host": "localhost",
+        "dbname": "aj",
+        "id": "rail",
         "project": "foss4g-2011"
       }
     },
@@ -60,17 +80,71 @@
       "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
       "class": "",
       "Datasource": {
-        "username": "aj",
-        "password": "aj",
-        "host": "localhost",
-        "port": "5432",
-        "dbname": "aj",
-        "table": "osm_new_motorways",
-        "key_field": "osm_id",
+        "table": "(select geometry,type\nfrom osm_new_motorways\n) as highway",
+        "key_field": "",
         "geometry_field": "geometry",
         "extent": "",
         "type": "postgis",
+        "dbname": "aj",
+        "host": "localhost",
+        "port": "5432",
+        "username": "aj",
+        "password": "aj",
         "id": "motorway_line",
+        "project": "foss4g-2011"
+      }
+    },
+    {
+      "geometry": "linestring",
+      "id": "motorway_fill",
+      "name": "motorway_fill",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "class": "",
+      "Datasource": {
+        "table": "(select geometry,type\nfrom osm_new_motorways\n) as highway",
+        "key_field": "",
+        "geometry_field": "geometry",
+        "extent": "",
+        "type": "postgis",
+        "host": "localhost",
+        "dbname": "aj",
+        "id": "motorway_fill",
+        "project": "foss4g-2011"
+      }
+    },
+    {
+      "geometry": "linestring",
+      "id": "border",
+      "name": "border",
+      "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
+      "class": "",
+      "Datasource": {
+        "table": "mundo.admin_line",
+        "key_field": "",
+        "geometry_field": "the_geom",
+        "extent": "",
+        "type": "postgis",
+        "host": "localhost",
+        "dbname": "aj",
+        "id": "border",
+        "project": "foss4g-2011"
+      }
+    },
+    {
+      "geometry": "point",
+      "id": "place",
+      "name": "place",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "class": "",
+      "Datasource": {
+        "table": "(select geometry, type, name, z_order, population\nfrom osm_new_places\norder by z_order asc, population desc\n) as places",
+        "key_field": "",
+        "geometry_field": "geometry",
+        "extent": "",
+        "type": "postgis",
+        "dbname": "aj",
+        "host": "localhost",
+        "id": "place",
         "project": "foss4g-2011"
       }
     }
