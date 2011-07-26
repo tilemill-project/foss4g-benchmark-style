@@ -6,7 +6,7 @@
 
 /* ---- PLACES ---- */
 
-#place[type='city'][zoom>4] {
+#place::city[type='city'][zoom>4] {
   text-name:'[name]';
   text-face-name:@sans;
   text-placement:point;
@@ -21,7 +21,7 @@
   [zoom>11]{ text-size:14; }
 }
 
-#place[type='town'][zoom>5] {
+#place::town[type='town'][zoom>6] {
   text-name:'[name]';
   text-face-name:@sans;
   text-placement:point;
