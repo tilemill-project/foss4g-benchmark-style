@@ -18,24 +18,53 @@ Map { background-color:@water; }
 
 #land { polygon-fill:@land; }
 
-#water { polygon-fill:@water; }
+#water_gen0[zoom>2][zoom<=9],
+#water_gen1[zoom>9][zoom<=12],
+#water[zoom>12] {
+  polygon-fill:@water;
+}
 
-#landuse[type='cemetery'] { polygon-fill:@cemetery; }
+#landuse_gen1[type='cemetery'][zoom>9][zoom<=12],
+#landuse[type='cemetery'][zoom>12] {
+  polygon-fill:@cemetery;
+}
 
-#landuse[type='forest'] { polygon-fill:@forest; }
+#landuse_gen0[type='forest'][zoom>4][zoom<=9],
+#landuse_gen1[type='forest'][zoom>9][zoom<=12],
+#landuse[type='forest'][zoom>12] {
+  polygon-fill:@forest;
+}
 
-#landuse[type='golf_course'],
-#landuse[type='park'] { polygon-fill:@park; }
+#landuse_gen0[type='golf_course'][zoom>4][zoom<=9],
+#landuse_gen1[type='golf_course'][zoom>9][zoom<=12],
+#landuse[type='golf_course'][zoom>12],
+#landuse_gen0[type='park'][zoom>4][zoom<=9],
+#landuse_gen1[type='park'][zoom>9][zoom<=12],
+#landuse[type='park'][zoom>12] {
+  polygon-fill:@park;
+}
 
-#landuse[type='hospital'] { polygon-fill:@hospital; }
+#landuse_gen1[type='hospital'][zoom>9][zoom<=12],
+#landuse[type='hospital'][zoom>12] {
+  polygon-fill:@hospital;
+}
 
-#landuse[type='pitch'],
-#landuse[type='school'],
-#landuse[type='stadium'],
-#landuse[type='university'] { polygon-fill:@school; }
+#landuse_gen1[type='pitch'][zoom>9][zoom<=12],
+#landuse[type='pitch'][zoom>12],
+#landuse_gen1[type='school'][zoom>9][zoom<=12],
+#landuse[type='school'][zoom>12],
+#landuse_gen1[type='stadium'][zoom>9][zoom<=12],
+#landuse[type='stadium'][zoom>12],
+#landuse_gen1[type='university'][zoom>9][zoom<=12],
+#landuse[type='university'][zoom>12] {
+  polygon-fill:@school;
+}
 
 /* separate attachment to force z-order */
-#landuse::parking[type='parking'] { polygon-fill:@parking; }
+#landuse_gen1::parking[type='parking'][zoom>9][zoom<=12],
+#landuse::parking[type='parking'][zoom>12] {
+  polygon-fill:@parking;
+}
 
 #border[adm0='US']{
   line-opacity: 0.5;
