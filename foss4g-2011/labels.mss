@@ -116,3 +116,18 @@
   text-min-distance:60;
   text-size:11;
 }
+
+/* ==== WATERWAYS ================================================= */
+
+#waterway_label[type='river'][zoom>5],
+#waterway_label[type='canal'][zoom>9],
+#waterway_label[type='stream'][zoom>11] {
+  text-name:'[name]';
+  text-face-name:@sans;
+  text-fill:darken(@water,20);
+  text-halo-fill:#fff;
+  text-halo-radius:2;
+  text-placement:line;
+  text-min-distance:400;
+  text-size:10;
+}
