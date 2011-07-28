@@ -404,24 +404,6 @@
       }
     },
     {
-      "geometry": "linestring",
-      "id": "border",
-      "name": "border",
-      "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
-      "class": "",
-      "Datasource": {
-        "table": "mundo.admin_line",
-        "key_field": "",
-        "geometry_field": "the_geom",
-        "extent": "",
-        "type": "postgis",
-        "host": "localhost",
-        "dbname": "aj",
-        "id": "border",
-        "project": "foss4g-2011"
-      }
-    },
-    {
       "geometry": "point",
       "id": "place",
       "name": "place",

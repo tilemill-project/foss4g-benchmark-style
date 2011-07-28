@@ -2,9 +2,8 @@
 /* FOSS4G 2011 WMS BENCHMARK STYLE FOR MAPNIK                       */
 /* **************************************************************** */
 
-/* ---- PALETTE ---- */
+/* ==== LANDUSE PALETTE =========================================== */
 
-/* Landuse areas, etc */
 @cemetery:  #d1d1d1;
 @forest:    #c4d0bc;
 @hospital:  #e5c6c3;
@@ -13,6 +12,8 @@
 @parking:   #d1d0cd;
 @school:    #ded2ac;
 @water:     #99b3cc;
+
+/* ==== LANDUSE & LANDCOVER ======================================= */
 
 Map { background-color:@water; }
 
@@ -66,9 +67,7 @@ Map { background-color:@water; }
   polygon-fill:@parking;
 }
 
-#border[adm0='US']{
-  line-opacity: 0.5;
-}/* ---- Waterways ------------------------------------------------- */
+/* ---- Waterways ------------------------------------------------- */
 
 #waterway[type='river'][zoom>5] {
   line-color:@water;

@@ -1,6 +1,6 @@
-/* ---- PALETTE --------------------------------------------------- */
+/* ==== HIGHWAY PALETTE =========================================== */
 
-  @bridge:      #666;
+@bridge:        #666;
 @motorway_fill: #fd923a;
 @motorway_line: desaturate(darken(@motorway_fill,20),15);
 @trunk_fill:    #ffc345;
@@ -171,12 +171,12 @@
   line-cap:round;
   line-join:round;
 }
-#mainroad_fill_fill_gen0[type='trunk'] {
+#mainroad_fill_gen0[type='trunk'] {
   [zoom=7] { line-width:0.6; }
   [zoom=8] { line-width:0.8; }
   [zoom=9] { line-width:1.0; }
 }
-#mainroad_fill_fill_gen1[type='trunk'] {
+#mainroad_fill_gen1[type='trunk'] {
   [zoom=10]{ line-width:1.2; }
   [zoom=11]{ line-width:1.8; }
   [zoom=12]{ line-width:2.5; }
@@ -420,7 +420,7 @@
 
 /* ==== RAILWAY =================================================== */
 
-#rail {
+#rail[zoom>7] {
   line-color:@rail;
   line-dasharray:2,2;
 }
