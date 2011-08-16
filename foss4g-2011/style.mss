@@ -22,9 +22,24 @@
 
 Map { background-color:@water; }
 
-#land { polygon-fill:@land; }
+#land {
+  polygon-fill:@land;
+  polygon-gamma:0.75;
+}
 
-#water_gen0[zoom>2][zoom<=9],
+#borders::glow[zoom>5] {
+  line-width:5;
+  line-color:#CDCBC6;
+  line-opacity:0.5;
+}
+#borders::line[zoom>=0] {
+  line-width:0.5;
+  line-color:#CDCBC6;
+  [zoom>3] { line-color:#8d8b8d; }
+  [zoom>6] { line-width:1; }
+}
+
+#water_gen0[zoom>3][zoom<=9],
 #water_gen1[zoom>9][zoom<=12],
 #water[zoom>12] {
   polygon-fill:@water;
