@@ -6,6 +6,9 @@
 @land:       #f2efe9;
 @water:      #99b3cc;
 
+@forest: #c4d0bc;
+@park: #b5d29c;
+
 /* ==== LANDUSE & LANDCOVER ======================================= */
 
 Map { background-color:@water; }
@@ -18,16 +21,21 @@ Map { background-color:@water; }
   polygon-fill:@water;
 }
 
-#landuse_gen0[zoom>3][zoom<=9],
+#forest_park[zoom>3][zoom<6] {
+  [type='forest']     { polygon-fill:@forest; }
+  [type='park']       { polygon-fill:@park; }
+}
+
+#landuse_gen0[zoom>5][zoom<=9],
 #landuse_gen1[zoom>9][zoom<=12],
 #landuse[zoom>12] {
   [type='cemetery']   { polygon-fill:#d1d1d1; }
   [type='commercial'] { polygon-fill:#d1d0cd; }
-  [type='forest']     { polygon-fill:#c4d0bc; }
+  [type='forest']     { polygon-fill:@forest; }
   [type='golf_course']{ polygon-fill:#b5d29c; }
   [type='hospital']   { polygon-fill:#e5c6c3; }
   [type='commercial'] { polygon-fill:#d1d0cd; }
-  [type='park']       { polygon-fill:#b5d29c; }
+  [type='park']       { polygon-fill:@park; }
   [type='pitch']      { polygon-fill:#ded2ac; }
   [type='residential']{ polygon-fill:#f2efe9; }
   [type='school']     { polygon-fill:#ded2ac; }
