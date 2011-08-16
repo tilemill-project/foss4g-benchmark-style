@@ -60,7 +60,32 @@
 
 /* ==== LANDUSAGES ================================================ */
 
-#landuse_label[zoom>11][area>2000000],
+/* Z11+
+ *  - industrial/commercial/parking
+ *  - park/golf_course 
+ * Z12+
+ *  - forest/wood
+ *  - residential
+ *  - pedestrian
+ *  - cemetery
+ *  - hospital
+ *  - school/college/university
+ *  - sports_center/stadium/pitch
+ */
+
+#landuse_label[zoom>12][area>1000000] {
+  [type='industrial'],[type='commercial'],[type='parking'],
+  [type='park'],[type='golf_course'] {
+    text-name:'[name]';
+    text-face-name:@sans;
+    text-fill:#000;
+    text-halo-fill:#fff;
+    text-halo-radius:2;
+    text-placement:interior;
+    text-size:11;
+    text-wrap-width:20;
+  }
+}
 #landuse_label[zoom>12][area>1000000],
 #landuse_label[zoom>13][area>500000],
 #landuse_label[zoom>14][area>250000],
@@ -70,6 +95,7 @@
   text-name:'[name]';
   text-face-name:@sans;
   text-fill:#000;
+  [type='pedestrian'] { text-fill:#333; }
   text-halo-fill:#fff;
   text-halo-radius:2;
   text-placement:interior;
