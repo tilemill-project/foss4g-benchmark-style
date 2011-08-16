@@ -16,6 +16,8 @@
 @sports: #DED1AB;
 @park: #b5d29c;
 
+@transport: rgb(200,200,200);
+
 /* ==== LANDUSE & LANDCOVER ======================================= */
 
 Map { background-color:@water; }
@@ -40,6 +42,10 @@ Map { background-color:@water; }
   [type='hospital'] { polygon-fill:@hospital; }
   [type='school'],[type='college'],[type='university'] { polygon-fill:@school; }
   [type='sports_center'],[type='stadium'],[type='pitch'] { polygon-fill:@sports; }
+}
+
+#transport_areas[zoom>3] {
+  polygon-fill:@transport;
 }
 
 /* ---- Waterways ------------------------------------------------- */
