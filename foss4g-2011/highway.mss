@@ -592,3 +592,12 @@
     [zoom>17]{ line-width:5; }
   }
 }
+#aeroway::pattern[zoom>14] {
+/* multiple zoom level filters are required to workaround Carto 
+ * attachment-ordering misbehavior. */
+  [type='runway'][zoom>14] {
+    line-color:rgb(80,80,80);
+    line-cap:butt;
+    line-dasharray:2,2;
+  }
+}
