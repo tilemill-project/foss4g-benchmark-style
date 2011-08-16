@@ -499,10 +499,17 @@
     line-cap:round;
     line-join:round;
   }
-  [zoom>13][tunnel=1] { line-opacity:0.4; }
   [zoom=14]{ line-width:2.5; }
   [zoom=15]{ line-width:4; }
   [zoom>15]{ line-width:6; }
+}
+#minorroad_fill[type='living_street'],
+#minorroad_fill[type='residential'],
+#minorroad_fill[type='road'],
+#minorroad_fill[type='service'],
+#minorroad_fill[type='unclassified'],
+#minorroad_fill[type='unknown'] {
+  [zoom>13][tunnel=1] { line-opacity:0.4; }
 }
 
 /* ---- Track ----------------------------------------------------- */
