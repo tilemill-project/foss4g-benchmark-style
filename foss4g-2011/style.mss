@@ -6,7 +6,14 @@
 @land:       #f2efe9;
 @water:      #99b3cc;
 
+@cemetery: #d1d1d1;
 @forest: #c4d0bc;
+@hospital: rgb(229,198,195);
+@industrial: rgb(209,208,205);
+@pedestrian: rgb(250,250,245);
+@residential: rgb(242,239,233);
+@school: rgb(222,210,172);
+@sports: #DED1AB;
 @park: #b5d29c;
 
 /* ==== LANDUSE & LANDCOVER ======================================= */
@@ -21,27 +28,18 @@ Map { background-color:@water; }
   polygon-fill:@water;
 }
 
-#forest_park[zoom>3][zoom<6] {
-  [type='forest']     { polygon-fill:@forest; }
-  [type='park']       { polygon-fill:@park; }
-}
-
-#landuse_gen0[zoom>5][zoom<=9],
+#landuse_gen0[zoom>3][zoom<=9],
 #landuse_gen1[zoom>9][zoom<=12],
 #landuse[zoom>12] {
-  [type='cemetery']   { polygon-fill:#d1d1d1; }
-  [type='commercial'] { polygon-fill:#d1d0cd; }
-  [type='forest']     { polygon-fill:@forest; }
-  [type='golf_course']{ polygon-fill:#b5d29c; }
-  [type='hospital']   { polygon-fill:#e5c6c3; }
-  [type='commercial'] { polygon-fill:#d1d0cd; }
-  [type='park']       { polygon-fill:@park; }
-  [type='pitch']      { polygon-fill:#ded2ac; }
-  [type='residential']{ polygon-fill:#f2efe9; }
-  [type='school']     { polygon-fill:#ded2ac; }
-  [type='university'] { polygon-fill:#ded2ac; }
-  [type='wood']       { polygon-fill:#c4d0bc; }
-  ::p[type='parking'] { polygon-fill:#d1d0cd; }
+  [type='forest'],[type='wood'] { polygon-fill:@forest; }
+  [type='residential'] { polygon-fill:@residential; }
+  [type='pedestrian'] { polygon-fill:@pedestrian; }
+  [type='industrial'],[type='commercial'],[type='parking'] { polygon-fill:@industrial; }
+  [type='cemetery'] { polygon-fill:@cemetery; }
+  [type='park'],[type='golf_course'] { polygon-fill:@park; }
+  [type='hospital'] { polygon-fill:@hospital; }
+  [type='school'],[type='college'],[type='university'] { polygon-fill:@school; }
+  [type='sports_center'],[type='stadium'],[type='pitch'] { polygon-fill:@sports; }
 }
 
 /* ---- Waterways ------------------------------------------------- */
