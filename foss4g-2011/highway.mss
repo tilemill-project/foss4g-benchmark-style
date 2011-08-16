@@ -520,6 +520,7 @@
     line-dasharray:2,2;
   }
   [zoom>14] {
+    line-color:#fff;
     line-width:1;
     line-dasharray:2,3;
   }
