@@ -1,7 +1,7 @@
 /* ==== HIGHWAY PALETTE =========================================== */
 
 @aeroway:       rgb(180,180,180);
-@bridge:        #666;
+@bridge:        rgb(136,136,136);
 @motorway_fill: #fd923a;
 @motorway_line: #BA6E27;
 @trunk_fill:    #ffc345;
@@ -562,6 +562,9 @@
 #rail[zoom>7] {
   line-color:@rail;
   line-dasharray:2,2;
+  line-width:0.5;
+  [tunnel=1] { line-opacity:0.5; }
+  [zoom>9] { line-width:1; }
 }
 
 /* ==== AEROWAY =================================================== */
