@@ -37,31 +37,12 @@
     },
     {
       "geometry": "polygon",
-      "id": "forest_park",
-      "name": "forest_park",
-      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
-      "class": "",
-      "Datasource": {
-        "table": "(select geometry, type from osm_new_landusages_gen0\nwhere type in ('forest', 'park')\n) as landuse",
-        "key_field": "",
-        "geometry_field": "geometry",
-        "extent": "",
-        "type": "postgis",
-        "dbname": "aj",
-        "host": "localhost",
-        "id": "forest_park",
-        "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
-        "project": "foss4g-2011"
-      }
-    },
-    {
-      "geometry": "polygon",
       "id": "landuse_gen0",
       "name": "landuse_gen0",
       "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
       "class": "",
       "Datasource": {
-        "table": "(select geometry, type, z_order\nfrom osm_new_landusages_gen0\norder by z_order) as landusages",
+        "table": "(select geometry, type, round(st_area(geometry)) as area\nfrom osm_new_landusages_gen0 where type in (\n'forest','park','golf_course','parking','school','residential','cemetery',\n'university','wood','commercial','industrial','stadium','sports_center',\n'pitch','hospital','college','pedestrian')\norder by area desc) as landusages",
         "key_field": "",
         "geometry_field": "geometry",
         "extent": "",
@@ -80,7 +61,7 @@
       "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
       "class": "",
       "Datasource": {
-        "table": "(select geometry, type, z_order\nfrom osm_new_landusages_gen1\norder by z_order) as landusages",
+        "table": "(select geometry, type, round(st_area(geometry)) as area\nfrom osm_new_landusages_gen1 where type in (\n'forest','park','golf_course','parking','school','residential','cemetery',\n'university','wood','commercial','industrial','stadium','sports_center',\n'pitch','hospital','college','pedestrian')\norder by area desc) as landusages",
         "key_field": "",
         "geometry_field": "geometry",
         "extent": "",
@@ -99,7 +80,7 @@
       "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
       "class": "",
       "Datasource": {
-        "table": "(select geometry, type, z_order\nfrom osm_new_landusages\norder by z_order) as landusages",
+        "table": "(select geometry, type, round(st_area(geometry)) as area\nfrom osm_new_landusages where type in (\n'forest','park','golf_course','parking','school','residential','cemetery',\n'university','wood','commercial','industrial','stadium','sports_center',\n'pitch','hospital','college','pedestrian')\norder by area desc) as landusages",
         "key_field": "",
         "geometry_field": "geometry",
         "extent": "",
@@ -576,7 +557,7 @@
       "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
       "class": "",
       "Datasource": {
-        "table": "(select geometry, type, name, round(st_area(geometry)) as area\nfrom osm_new_landusages\nwhere name is not null\n) as label",
+        "table": "(select geometry, type, name, round(st_area(geometry)) as area\nfrom osm_new_landusages\nwhere name is not null\norder by area desc) as label",
         "key_field": "",
         "geometry_field": "geometry",
         "extent": "",
