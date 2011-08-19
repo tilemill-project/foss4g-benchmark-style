@@ -39,7 +39,7 @@ f.closed
 
 with open(mml, 'w') as f:
   for layer in newf["Layer"]:
-    if layer["type"] == "postgis":
+    if layer["Datasource"]["type"] == "postgis":
       layer["Datasource"]["host"] = host
       layer["Datasource"]["port"] = port
       layer["Datasource"]["dbname"] = dbname
