@@ -39,12 +39,13 @@ f.closed
 
 with open(mml, 'w') as f:
   for layer in newf["Layer"]:
-    layer["Datasource"]["host"] = host
-    layer["Datasource"]["port"] = port
-    layer["Datasource"]["dbname"] = dbname
-    layer["Datasource"]["user"] = user
-    layer["Datasource"]["password"] = password
-    layer["Datasource"]["extent"] = extent
+    if layer["type"] == "postgis":
+      layer["Datasource"]["host"] = host
+      layer["Datasource"]["port"] = port
+      layer["Datasource"]["dbname"] = dbname
+      layer["Datasource"]["user"] = user
+      layer["Datasource"]["password"] = password
+      layer["Datasource"]["extent"] = extent
     if layer["id"] == "shoreline_300":
       layer["Datasource"]["file"] = shoreline_300
     elif (layer["id"] == "processed_p") or (layer["id"] == "processed_p_outline"):
