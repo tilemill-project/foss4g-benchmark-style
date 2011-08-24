@@ -8,14 +8,6 @@
 
 /* ==== PLACES ==================================================== */
 
-#place::continent[type='continent'][zoom>=0][zoom<3] {
-  text-name:'[name]';
-  text-face-name:@sans;
-  text-placement:point;
-  text-fill:rgb(100,100,100);
-  text-size:10;
-}
-
 #place::country[type='country'][zoom>1][zoom<9] {
   text-name:'[name]';
   text-face-name:@sans;
