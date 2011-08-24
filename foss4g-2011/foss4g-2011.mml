@@ -43,7 +43,7 @@
       "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
       "class": "",
       "Datasource": {
-        "table": "(select geometry, type, round(st_area(geometry)) as area\nfrom osm_new_landusages_gen0 where type in (\n'forest','park','golf_course','parking','school','residential','cemetery',\n'university','wood','commercial','industrial','stadium','sports_center',\n'pitch','hospital','college','pedestrian')\norder by area desc) as landusages",
+        "table": "(select geometry, type, round(st_area(geometry)) as area\nfrom osm_landusages_gen0 where type in (\n'forest','park','golf_course','parking','school','residential','cemetery',\n'university','wood','commercial','industrial','stadium','sports_center',\n'pitch','hospital','college','pedestrian')\norder by area desc) as landusages",
         "key_field": "",
         "geometry_field": "geometry",
         "extent": "",
@@ -62,7 +62,7 @@
       "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
       "class": "",
       "Datasource": {
-        "table": "(select geometry, type, round(st_area(geometry)) as area\nfrom osm_new_landusages_gen1 where type in (\n'forest','park','golf_course','parking','school','residential','cemetery',\n'university','wood','commercial','industrial','stadium','sports_center',\n'pitch','hospital','college','pedestrian')\norder by area desc) as landusages",
+        "table": "(select geometry, type, round(st_area(geometry)) as area\nfrom osm_landusages_gen1 where type in (\n'forest','park','golf_course','parking','school','residential','cemetery',\n'university','wood','commercial','industrial','stadium','sports_center',\n'pitch','hospital','college','pedestrian')\norder by area desc) as landusages",
         "key_field": "",
         "geometry_field": "geometry",
         "extent": "",
@@ -81,7 +81,7 @@
       "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
       "class": "",
       "Datasource": {
-        "table": "(select geometry, type, round(st_area(geometry)) as area\nfrom osm_new_landusages where type in (\n'forest','park','golf_course','parking','school','residential','cemetery',\n'university','wood','commercial','industrial','stadium','sports_center',\n'pitch','hospital','college','pedestrian')\norder by area desc) as landusages",
+        "table": "(select geometry, type, round(st_area(geometry)) as area\nfrom osm_landusages where type in (\n'forest','park','golf_course','parking','school','residential','cemetery',\n'university','wood','commercial','industrial','stadium','sports_center',\n'pitch','hospital','college','pedestrian')\norder by area desc) as landusages",
         "key_field": "",
         "geometry_field": "geometry",
         "extent": "",
@@ -100,7 +100,7 @@
       "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
       "class": "",
       "Datasource": {
-        "table": "(select geometry, type\nfrom osm_new_waterways\n) as waterway",
+        "table": "(select geometry, type\nfrom osm_waterways\n) as waterway",
         "key_field": "",
         "geometry_field": "geometry",
         "extent": "",
@@ -119,7 +119,7 @@
       "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
       "class": "",
       "Datasource": {
-        "table": "(select geometry\nfrom osm_new_waterareas\nwhere round(st_area(geometry)) > 10000\n) as water",
+        "table": "(select geometry\nfrom osm_waterareas\nwhere round(st_area(geometry)) > 10000\n) as water",
         "key_field": "",
         "geometry_field": "geometry",
         "extent": "",
@@ -138,7 +138,7 @@
       "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
       "class": "",
       "Datasource": {
-        "table": "(select geometry\nfrom osm_new_waterareas\nwhere round(st_area(geometry)) > 1000\n) as water",
+        "table": "(select geometry\nfrom osm_waterareas\nwhere round(st_area(geometry)) > 1000\n) as water",
         "key_field": "",
         "geometry_field": "geometry",
         "extent": "",
@@ -157,7 +157,7 @@
       "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
       "class": "",
       "Datasource": {
-        "table": "(select geometry\nfrom osm_new_waterareas\n) as water",
+        "table": "(select geometry\nfrom osm_waterareas\n) as water",
         "key_field": "",
         "geometry_field": "geometry",
         "extent": "",
@@ -176,7 +176,7 @@
       "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
       "class": "",
       "Datasource": {
-        "table": "(select geometry, type\nfrom osm_new_transport_areas\n) as transport",
+        "table": "(select geometry, type\nfrom osm_transport_areas\n) as transport",
         "key_field": "",
         "geometry_field": "geometry",
         "extent": "",
@@ -195,7 +195,7 @@
       "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
       "class": "",
       "Datasource": {
-        "table": "(select geometry, type from osm_new_aeroways\n) as aeroway",
+        "table": "(select geometry, type from osm_aeroways\n) as aeroway",
         "key_field": "",
         "geometry_field": "geometry",
         "extent": "",
@@ -214,7 +214,7 @@
       "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
       "class": "",
       "Datasource": {
-        "table": "(select geometry, type\nfrom osm_new_buildings\n) as building",
+        "table": "(select geometry, type\nfrom osm_buildings\n) as building",
         "key_field": "",
         "geometry_field": "geometry",
         "extent": "",
@@ -233,7 +233,7 @@
       "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
       "class": "",
       "Datasource": {
-        "table": "(select geometry, type, tunnel\nfrom osm_new_railways\n) as railway",
+        "table": "(select geometry, type, tunnel\nfrom osm_railways\n) as railway",
         "key_field": "",
         "geometry_field": "geometry",
         "extent": "",
@@ -252,7 +252,7 @@
       "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
       "class": "",
       "Datasource": {
-        "table": "(select geometry, type\nfrom osm_new_minorroads where tunnel = 0\n) as road",
+        "table": "(select geometry, type\nfrom osm_minorroads where tunnel = 0\n) as road",
         "key_field": "",
         "geometry_field": "geometry",
         "extent": "",
@@ -271,7 +271,7 @@
       "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
       "class": "",
       "Datasource": {
-        "table": "(select geometry, type\nfrom osm_new_roads_gen0\n) as road",
+        "table": "(select geometry, type\nfrom osm_roads_gen0\n) as road",
         "key_field": "",
         "geometry_field": "geometry",
         "extent": "",
@@ -290,7 +290,7 @@
       "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
       "class": "",
       "Datasource": {
-        "table": "(select geometry, type\nfrom osm_new_roads_gen1\n) as road",
+        "table": "(select geometry, type\nfrom osm_roads_gen1\n) as road",
         "key_field": "",
         "geometry_field": "geometry",
         "extent": "",
@@ -309,7 +309,7 @@
       "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
       "class": "",
       "Datasource": {
-        "table": "(select geometry, type\nfrom osm_new_mainroads where tunnel = 0\n) as road",
+        "table": "(select geometry, type\nfrom osm_mainroads where tunnel = 0\n) as road",
         "key_field": "",
         "geometry_field": "geometry",
         "extent": "",
@@ -328,7 +328,7 @@
       "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
       "class": "",
       "Datasource": {
-        "table": "(select geometry, type\nfrom osm_new_motorways where tunnel = 0\n) as road",
+        "table": "(select geometry, type\nfrom osm_motorways where tunnel = 0\n) as road",
         "key_field": "",
         "geometry_field": "geometry",
         "extent": "",
@@ -349,7 +349,7 @@
       "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
       "class": "",
       "Datasource": {
-        "table": "(select geometry, type, tunnel\nfrom osm_new_minorroads\n) as road",
+        "table": "(select geometry, type, tunnel\nfrom osm_minorroads\n) as road",
         "key_field": "",
         "geometry_field": "geometry",
         "extent": "",
@@ -368,7 +368,7 @@
       "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
       "class": "",
       "Datasource": {
-        "table": "(select geometry, type, tunnel\nfrom osm_new_roads_gen0\n) as road",
+        "table": "(select geometry, type, tunnel\nfrom osm_roads_gen0\n) as road",
         "key_field": "",
         "geometry_field": "geometry",
         "extent": "",
@@ -387,7 +387,7 @@
       "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
       "class": "",
       "Datasource": {
-        "table": "(select geometry, type, tunnel\nfrom osm_new_roads_gen1\n) as roads",
+        "table": "(select geometry, type, tunnel\nfrom osm_roads_gen1\n) as roads",
         "key_field": "",
         "geometry_field": "geometry",
         "extent": "",
@@ -406,7 +406,7 @@
       "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
       "class": "",
       "Datasource": {
-        "table": "(select geometry, type, tunnel\nfrom osm_new_mainroads\n) as road",
+        "table": "(select geometry, type, tunnel\nfrom osm_mainroads\n) as road",
         "key_field": "",
         "geometry_field": "geometry",
         "extent": "",
@@ -425,7 +425,7 @@
       "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
       "class": "",
       "Datasource": {
-        "table": "(select geometry, type, tunnel\nfrom osm_new_motorways\n) as road",
+        "table": "(select geometry, type, tunnel\nfrom osm_motorways\n) as road",
         "key_field": "",
         "geometry_field": "geometry",
         "extent": "",
@@ -444,7 +444,7 @@
       "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
       "class": "",
       "Datasource": {
-        "table": "(select geometry, type, bridge, z_order\nfrom osm_new_roads where bridge = 1\norder by z_order) as road",
+        "table": "(select geometry, type, bridge, z_order\nfrom osm_roads where bridge = 1\norder by z_order) as road",
         "key_field": "",
         "geometry_field": "geometry",
         "extent": "",
@@ -463,7 +463,7 @@
       "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
       "class": "",
       "Datasource": {
-        "table": "(select geometry, type, name, z_order, population\nfrom osm_new_places\norder by z_order, population desc\n) as places",
+        "table": "(select geometry, type, name, z_order, population\nfrom osm_places\norder by z_order, population desc\n) as places",
         "key_field": "",
         "geometry_field": "geometry",
         "extent": "",
@@ -482,7 +482,7 @@
       "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
       "class": "",
       "Datasource": {
-        "table": "(select geometry, type, name, ref, oneway\nfrom osm_new_motorways\nwhere name is not null or ref is not null or oneway = 1\n) as label",
+        "table": "(select geometry, type, name, ref, oneway\nfrom osm_motorways\nwhere name is not null or ref is not null or oneway = 1\n) as label",
         "key_field": "",
         "geometry_field": "geometry",
         "extent": "",
@@ -501,7 +501,7 @@
       "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
       "class": "",
       "Datasource": {
-        "table": "(select geometry, type, name, oneway\nfrom osm_new_mainroads\nwhere name is not null or oneway = 1\n) as label",
+        "table": "(select geometry, type, name, oneway\nfrom osm_mainroads\nwhere name is not null or oneway = 1\n) as label",
         "key_field": "",
         "geometry_field": "geometry",
         "extent": "",
@@ -520,7 +520,7 @@
       "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
       "class": "",
       "Datasource": {
-        "table": "(select geometry, type, name, oneway\nfrom osm_new_minorroads\nwhere name is not null or oneway = 1\n) as label",
+        "table": "(select geometry, type, name, oneway\nfrom osm_minorroads\nwhere name is not null or oneway = 1\n) as label",
         "key_field": "",
         "geometry_field": "geometry",
         "extent": "",
@@ -539,7 +539,7 @@
       "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
       "class": "",
       "Datasource": {
-        "table": "(select geometry, name, round(st_area(geometry)) as area\nfrom osm_new_waterareas\nwhere type != 'riverbank' and name is not null\n) as label",
+        "table": "(select geometry, name, round(st_area(geometry)) as area\nfrom osm_waterareas\nwhere type != 'riverbank' and name is not null\n) as label",
         "key_field": "",
         "geometry_field": "geometry",
         "extent": "",
@@ -558,7 +558,7 @@
       "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
       "class": "",
       "Datasource": {
-        "table": "(select geometry, type, name, round(st_area(geometry)) as area\nfrom osm_new_landusages\nwhere name is not null\norder by area desc) as label",
+        "table": "(select geometry, type, name, round(st_area(geometry)) as area\nfrom osm_landusages\nwhere name is not null\norder by area desc) as label",
         "key_field": "",
         "geometry_field": "geometry",
         "extent": "",
@@ -577,7 +577,7 @@
       "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
       "class": "",
       "Datasource": {
-        "table": "(select geometry, type, name, round(st_length(geometry)) as length\nfrom osm_new_waterways\nwhere type in ('canal', 'river', 'stream') and name is not null\n) as label",
+        "table": "(select geometry, type, name, round(st_length(geometry)) as length\nfrom osm_waterways\nwhere type in ('canal', 'river', 'stream') and name is not null\n) as label",
         "key_field": "",
         "geometry_field": "geometry",
         "extent": "",
