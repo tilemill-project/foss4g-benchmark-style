@@ -6,9 +6,9 @@
     85.05112877980659
   ],
   "center": [
-    -105.15554308891083,
-    39.78356720369382,
-    11
+    -105.95479846000453,
+    40.221182233258126,
+    9
   ],
   "format": "png",
   "interactivity": false,
@@ -104,8 +104,8 @@
     },
     {
       "geometry": "polygon",
-      "name": "waterway_gen0",
-      "id": "waterway_gen0",
+      "name": "waterareasgen0",
+      "id": "waterareasgen0",
       "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
       "class": "",
       "Datasource": {
@@ -120,8 +120,8 @@
     },
     {
       "geometry": "polygon",
-      "name": "waterway_gen1",
-      "id": "waterway_gen1",
+      "name": "waterareas_gen1",
+      "id": "waterareas_gen1",
       "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
       "class": "",
       "Datasource": {
@@ -132,6 +132,37 @@
         "type": "postgis",
         "dbname": "osm",
         "port": "5432"
+      }
+    },
+    {
+      "name": "waterareas",
+      "geometry": "polygon",
+      "id": "waterareas",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "Datasource": {
+        "table": "(select geometry\nfrom osm_waterareas\n) as water",
+        "key_field": "",
+        "geometry_field": "geometry",
+        "extent": "-12197658.2353032,4354107.45296023,-11359191.3507561,5097334.13614237",
+        "type": "postgis",
+        "dbname": "osm",
+        "port": "5432"
+      },
+      "class": ""
+    },
+    {
+      "geometry": "linestring",
+      "name": "waterways_named",
+      "id": "waterways_named",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "class": "",
+      "Datasource": {
+        "table": "(select geometry, type\nfrom osm_waterways where name is not null\n) as waterway",
+        "key_field": "",
+        "geometry_field": "geometry",
+        "extent": "-12197658.2353032,4354107.45296023,-11359191.3507561,5097334.13614237",
+        "type": "postgis",
+        "dbname": "osm"
       }
     },
     {
@@ -150,72 +181,6 @@
         "extent": "-12197658.2353032,4354107.45296023,-11359191.3507561,5097334.13614237",
         "id": "waterway",
         "table": "(select geometry, type\nfrom osm_waterways\n) as waterway",
-        "password": "",
-        "type": "postgis",
-        "key_field": ""
-      },
-      "class": ""
-    },
-    {
-      "name": "water_gen0",
-      "geometry": "polygon",
-      "id": "water_gen0",
-      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
-      "Datasource": {
-        "geometry_field": "geometry",
-        "dbname": "osm",
-        "project": "foss4g-2011",
-        "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
-        "host": "",
-        "port": "5432",
-        "user": "",
-        "extent": "-12197658.2353032,4354107.45296023,-11359191.3507561,5097334.13614237",
-        "id": "water_gen0",
-        "table": "(select geometry\nfrom osm_waterareas\nwhere round(st_area(geometry)) > 10000\n) as water",
-        "password": "",
-        "type": "postgis",
-        "key_field": ""
-      },
-      "class": ""
-    },
-    {
-      "name": "water_gen1",
-      "geometry": "polygon",
-      "id": "water_gen1",
-      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
-      "Datasource": {
-        "geometry_field": "geometry",
-        "dbname": "osm",
-        "project": "foss4g-2011",
-        "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
-        "host": "",
-        "port": "5432",
-        "user": "",
-        "extent": "-12197658.2353032,4354107.45296023,-11359191.3507561,5097334.13614237",
-        "id": "water_gen1",
-        "table": "(select geometry\nfrom osm_waterareas\nwhere round(st_area(geometry)) > 1000\n) as water",
-        "password": "",
-        "type": "postgis",
-        "key_field": ""
-      },
-      "class": ""
-    },
-    {
-      "name": "water",
-      "geometry": "polygon",
-      "id": "water",
-      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
-      "Datasource": {
-        "geometry_field": "geometry",
-        "dbname": "osm",
-        "project": "foss4g-2011",
-        "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
-        "host": "",
-        "port": "5432",
-        "user": "",
-        "extent": "-12197658.2353032,4354107.45296023,-11359191.3507561,5097334.13614237",
-        "id": "water",
-        "table": "(select geometry\nfrom osm_waterareas\n) as water",
         "password": "",
         "type": "postgis",
         "key_field": ""

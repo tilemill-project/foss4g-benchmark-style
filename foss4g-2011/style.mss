@@ -39,9 +39,9 @@ Map { background-color:@water; }
   [zoom>6] { line-width:1; }
 }
 
-#water_gen0[zoom>3][zoom<=9],
-#water_gen1[zoom>9][zoom<=12],
-#water[zoom>12] {
+#waterareas_gen0[zoom>3][zoom<=9],
+#waterareas_gen1[zoom>9][zoom<=12],
+#waterareas[zoom>12] {
   polygon-fill:@water;
 }
 
@@ -73,9 +73,7 @@ Map { background-color:@water; }
 
 /* ---- Waterways ------------------------------------------------- */
 
-#waterway_gen0[zoom>3][zoom<=9],
-#waterway_gen1[zoom>9][zoom<=12],
-#waterway[zoom>12][type='river'] {
+#waterways_named[type='river'][zoom>5][zoom<=12]{
   line-color:@water;
   line-cap:round;
   line-join:round;
@@ -94,9 +92,26 @@ Map { background-color:@water; }
   [zoom>17]{ line-width:7; }
 }
 
-#waterway_gen0[zoom>3][zoom<=9],
-#waterway_gen1[zoom>9][zoom<=12],
-#waterway[zoom>12][type='stream']{
+#waterway[type='river'][zoom>12] {
+  line-color:@water;
+  line-cap:round;
+  line-join:round;
+  [zoom=6] { line-width:0.15; }
+  [zoom=7] { line-width:0.25; }
+  [zoom=8] { line-width:0.5; }
+  [zoom=9] { line-width:1; }
+  [zoom=10]{ line-width:1; }
+  [zoom=11]{ line-width:2; }
+  [zoom=12]{ line-width:2; }
+  [zoom=13]{ line-width:3; }
+  [zoom=14]{ line-width:3; }
+  [zoom=15]{ line-width:4; }
+  [zoom=16]{ line-width:5; }
+  [zoom=17]{ line-width:6; }
+  [zoom>17]{ line-width:7; }
+}
+
+#waterway[type='stream'][zoom>9] {
   line-color:@water;
   line-cap:round;
   line-join:round;
@@ -107,9 +122,33 @@ Map { background-color:@water; }
   [zoom>13]{ line-width:2; }
 }
 
-#waterway_gen0[zoom>3][zoom<=9],
-#waterway_gen1[zoom>9][zoom<=12],
-#waterway[zoom>12][type='canal'] {
+#waterway[type='canal'][zoom>9] {
+  line-color:@water;
+  line-cap:round;
+  line-join:round;
+  [zoom=10]{ line-width:0.5; }
+  [zoom=11]{ line-width:0.5; }
+  [zoom=12]{ line-width:1; }
+  [zoom=13]{ line-width:1; }
+  [zoom=14]{ line-width:2; }
+  [zoom=15]{ line-width:4; }
+  [zoom=16]{ line-width:8; }
+  [zoom=17]{ line-width:16; }
+  [zoom>17]{ line-width:30; }
+}
+
+#waterway[type='stream'][zoom>9]{
+  line-color:@water;
+  line-cap:round;
+  line-join:round;
+  [zoom=10]{ line-width:0.5; }
+  [zoom=11]{ line-width:0.5; }
+  [zoom=12]{ line-width:1; }
+  [zoom=13]{ line-width:1; }
+  [zoom>13]{ line-width:2; }
+}
+
+#waterway[type='canal'][zoom>9] {
   line-color:@water;
   line-cap:round;
   line-join:round;
