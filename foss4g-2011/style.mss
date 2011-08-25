@@ -73,7 +73,9 @@ Map { background-color:@water; }
 
 /* ---- Waterways ------------------------------------------------- */
 
-#waterway[type='river'][zoom>5] {
+#waterway_gen0[zoom>3][zoom<=9],
+#waterway_gen1[zoom>9][zoom<=12],
+#waterway[zoom>12][type='river'] {
   line-color:@water;
   line-cap:round;
   line-join:round;
@@ -92,7 +94,9 @@ Map { background-color:@water; }
   [zoom>17]{ line-width:7; }
 }
 
-#waterway[type='stream'][zoom>9] {
+#waterway_gen0[zoom>3][zoom<=9],
+#waterway_gen1[zoom>9][zoom<=12],
+#waterway[zoom>12][type='stream']{
   line-color:@water;
   line-cap:round;
   line-join:round;
@@ -103,7 +107,9 @@ Map { background-color:@water; }
   [zoom>13]{ line-width:2; }
 }
 
-#waterway[type='canal'][zoom>9] {
+#waterway_gen0[zoom>3][zoom<=9],
+#waterway_gen1[zoom>9][zoom<=12],
+#waterway[zoom>12][type='canal'] {
   line-color:@water;
   line-cap:round;
   line-join:round;
