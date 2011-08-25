@@ -23,7 +23,7 @@ shoreline_300 = "http://tilemill-data.s3.amazonaws.com/osm/shoreline_300.zip"
 # same units as the database (probably spherical mercator meters). The
 # whole world is "-20037508.34,-20037508.34,20037508.34,20037508.34".
 # Leave blank to let Mapnik estimate.
-extent = ""
+extent = "-12197658.2353032,4354107.45296023,-11359191.3507561,5097334.13614237"
 
 #################################
 
@@ -50,5 +50,5 @@ with open(mml, 'w') as f:
       layer["Datasource"]["file"] = shoreline_300
     elif (layer["id"] == "processed_p") or (layer["id"] == "processed_p_outline"):
       layer["Datasource"]["file"] = processed_p
-  f.write(json.dumps(newf, indent=2))
+  f.write(json.dumps(newf, sort_keys=True, indent=2))
 f.closed
