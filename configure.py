@@ -4,11 +4,11 @@
 ## MAPNIK CARTO CONFIGURATION OPTIONS ##
 
 # PostGIS connection setup
-host     = "localhost"
+host     = ""
 port     = "5432"
-dbname   = "gis"
-user     = "gis"
-password = "gis"
+dbname   = "osm"
+user     = "postgres"
+password = "postgres"
 
 # Land shapefiles required for the style. If you have already downloaded
 # these or wish to use different versions, specify their paths here.
@@ -25,6 +25,7 @@ shoreline_300 = "http://tilemill-data.s3.amazonaws.com/osm/shoreline_300.zip"
 # Leave blank to let Mapnik estimate.
 extent = "-12197658.2353032,4354107.45296023,-11359191.3507561,5097334.13614237"
 
+feat_caching = True
 #################################
 
 import json
@@ -32,6 +33,7 @@ from sys import path
 from os.path import join
 
 mml = join(path[0], 'foss4g-2011/foss4g-2011.mml')
+#mml_out = join(path[0], 'foss4g-2011/foss4g-2011-localized.mml')
 
 with open(mml, 'r') as f:
   newf = json.loads(f.read())
@@ -39,6 +41,9 @@ f.closed
 
 with open(mml, 'w') as f:
   for layer in newf["Layer"]:
+    if feat_caching:
+        layer["attributes"] = {}
+        layer["attributes"]["cache-features"] = "true"
     if layer["Datasource"]["type"] == "postgis":
       layer["Datasource"]["host"] = host
       layer["Datasource"]["port"] = port
@@ -52,3 +57,5 @@ with open(mml, 'w') as f:
       layer["Datasource"]["file"] = processed_p
   f.write(json.dumps(newf, sort_keys=True, indent=2))
 f.closed
+
+print 'wrote: ' + mml
