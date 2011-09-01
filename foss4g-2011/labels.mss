@@ -82,7 +82,7 @@
 #water_label[zoom>13][area>500000],
 #water_label[zoom>14][area>250000],
 #water_label[zoom>15][area>125000],
-#water_label[zoom>16][area>612500],
+#water_label[zoom>16][area>62500],
 #water_label[zoom>17] {
   text-name:'[name]';
   text-face-name:@sans;
@@ -126,7 +126,7 @@
 #landuse_label[zoom>13][area>500000],
 #landuse_label[zoom>14][area>250000],
 #landuse_label[zoom>15][area>125000],
-#landuse_label[zoom>16][area>612500],
+#landuse_label[zoom>16][area>62500],
 #landuse_label[zoom>17] {
   text-name:'[name]';
   text-face-name:@sans;
