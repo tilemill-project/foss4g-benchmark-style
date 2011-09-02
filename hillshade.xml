@@ -1,0 +1,23 @@
+<Map srs="+init=epsg:4269">
+    <Style name="terrain">
+        <Rule>
+          <RasterSymbolizer>
+            <RasterColorizer default-mode="linear">
+              <stop color="#35A86E" value = "1003"/>
+              <stop color="#FBFF80" value = "1800"/>
+              <stop color="#E06C1F" value = "2800"/>
+              <stop color="#C83737" value = "3500"/>
+              <stop color="#D7F3F3" value = "4397"/>
+            </RasterColorizer>
+          </RasterSymbolizer>
+        </Rule>
+    </Style>
+    <Layer name="terrain" srs="+init=epsg:4269">
+        <StyleName>terrain</StyleName>
+        <Datasource>
+            <Parameter name="type">gdal</Parameter>
+            <Parameter name="file">../../data/NED_17672037.bil</Parameter>
+            <Parameter name="band">1</Parameter>
+        </Datasource>
+    </Layer>
+</Map>
