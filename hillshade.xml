@@ -1,4 +1,5 @@
 <Map srs="+init=epsg:4269">
+
     <Style name="terrain">
         <Rule>
           <RasterSymbolizer>
@@ -12,12 +13,60 @@
           </RasterSymbolizer>
         </Rule>
     </Style>
-    <Layer name="terrain" srs="+init=epsg:4269">
+
+    <Datasource name="terrain">
+        <Parameter name="type">gdal</Parameter>
+        <Parameter name="band">1</Parameter>
+        <Parameter name="base">../../data/</Parameter>
+    </Datasource>
+
+    <Layer name="hillshade" srs="+init=epsg:4269">
         <StyleName>terrain</StyleName>
-        <Datasource>
-            <Parameter name="type">gdal</Parameter>
-            <Parameter name="file">../../data/NED_17672037.bil</Parameter>
-            <Parameter name="band">1</Parameter>
+        <Datasource base="terrain">
+            <Parameter name="file">NED_17672037.bil</Parameter>
         </Datasource>
     </Layer>
+    <Layer name="hillshade" srs="+init=epsg:4269">
+        <StyleName>terrain</StyleName>
+        <Datasource base="terrain">
+            <Parameter name="file">NED_35378829.bil</Parameter>
+        </Datasource>
+    </Layer>
+    <Layer name="hillshade" srs="+init=epsg:4269">
+        <StyleName>terrain</StyleName>
+        <Datasource base="terrain">
+            <Parameter name="file">NED_68314046.bil</Parameter>
+        </Datasource>
+    </Layer>
+    <Layer name="hillshade" srs="+init=epsg:4269">
+        <StyleName>terrain</StyleName>
+        <Datasource base="terrain">
+            <Parameter name="file">NED_82481338.bil</Parameter>
+        </Datasource>
+    </Layer>
+    <Layer name="hillshade" srs="+init=epsg:4269">
+        <StyleName>terrain</StyleName>
+        <Datasource base="terrain">
+            <Parameter name="file">NED_23900111.bil</Parameter>
+        </Datasource>
+    </Layer>
+    <Layer name="hillshade" srs="+init=epsg:4269">
+        <StyleName>terrain</StyleName>
+        <Datasource base="terrain">
+            <Parameter name="file">NED_56441553.bil</Parameter>
+        </Datasource>
+    </Layer>
+    <Layer name="hillshade" srs="+init=epsg:4269">
+        <StyleName>terrain</StyleName>
+        <Datasource base="terrain">
+            <Parameter name="file">NED_81400742.bil</Parameter>
+        </Datasource>
+    </Layer>
+    <Layer name="hillshade" srs="+init=epsg:4269">
+        <StyleName>terrain</StyleName>
+        <Datasource base="terrain">
+            <Parameter name="file">NED_98513935.bil</Parameter>
+        </Datasource>
+    </Layer>
+
 </Map>
