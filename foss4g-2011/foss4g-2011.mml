@@ -224,13 +224,13 @@
         "extent": "-12197658.2353032,4354107.45296023,-11359191.3507561,5097334.13614237", 
         "geometry_field": "geometry", 
         "key_field": "", 
-        "table": "(select geometry, type\nfrom osm_minorroads where type in ('living_street','residential','road','service','unclassified','unknown','track','footway','pedestrian')\n) as road", 
+        "table": "(select geometry, type\nfrom osm_minorroads where type in ('track','footway','pedestrian')\n) as track", 
         "type": "postgis"
       }, 
       "class": "", 
       "geometry": "linestring", 
-      "id": "minorroad_line", 
-      "name": "minorroad_line", 
+      "id": "track", 
+      "name": "track", 
       "srs": "+init=epsg:3857"
     }, 
     {
@@ -239,13 +239,13 @@
         "extent": "-12197658.2353032,4354107.45296023,-11359191.3507561,5097334.13614237", 
         "geometry_field": "geometry", 
         "key_field": "", 
-        "table": "(select geometry, type\nfrom osm_minorroads\nwhere name is not null\n) as label", 
+        "table": "(select geometry, type\nfrom osm_minorroads where type in ('living_street','residential','road','service','unclassified','unknown')\nand tunnel = 0\n) as road", 
         "type": "postgis"
       }, 
       "class": "", 
       "geometry": "linestring", 
-      "id": "minorroad_line_named", 
-      "name": "minorroad_line_named", 
+      "id": "minorroad_line", 
+      "name": "minorroad_line", 
       "srs": "+init=epsg:3857"
     }, 
     {
@@ -325,11 +325,8 @@
         "dbname": "osm", 
         "extent": "-12197658.2353032,4354107.45296023,-11359191.3507561,5097334.13614237", 
         "geometry_field": "geometry", 
-        "id": "minorroad_fill", 
         "key_field": "", 
-        "project": "foss4g-2011", 
-        "srs": "+init=epsg:3857", 
-        "table": "(select geometry, type, tunnel\nfrom osm_minorroads\n) as road", 
+        "table": "(select geometry, type, tunnel\nfrom osm_minorroads where type in ('living_street','residential','road','service','unclassified','unknown')\n) as road", 
         "type": "postgis"
       }, 
       "class": "", 
@@ -484,11 +481,8 @@
         "dbname": "osm", 
         "extent": "-12197658.2353032,4354107.45296023,-11359191.3507561,5097334.13614237", 
         "geometry_field": "geometry", 
-        "id": "minorroad_label", 
         "key_field": "", 
-        "project": "foss4g-2011", 
-        "srs": "+init=epsg:3857", 
-        "table": "(select geometry, type, name, oneway\nfrom osm_minorroads\nwhere name is not null or oneway = 1\n) as label", 
+        "table": "(select geometry, type, name, oneway\nfrom osm_minorroads\nwhere name is not null and  type in ('living_street','residential','road','service','unclassified','unknown')\n) as label", 
         "type": "postgis"
       }, 
       "class": "", 

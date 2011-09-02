@@ -452,12 +452,7 @@
 }
 
 /* ---- Default --------------------------------------------------- */
-#minorroad_line[type='living_street'],
-#minorroad_line[type='residential'],
-#minorroad_line[type='road'],
-#minorroad_line[type='service'],
-#minorroad_line[type='unclassified'],
-#minorroad_line[type='unknown'] {
+#minorroad_line {
   [zoom>10]{
     line-color:@standard_line;
     line-cap:round;
@@ -482,18 +477,13 @@
   [zoom>15]{ line-width:6 + 2; }
 }
 
-#minorroad_fill[type='living_street'],
-#minorroad_fill[type='residential'],
-#minorroad_fill[type='road'],
-#minorroad_fill[type='service'],
-#minorroad_fill[type='unclassified'],
-#minorroad_fill[type='unknown'],
+#minorroad_fill,
 #bridge::fill[type='living_street'],
 #bridge::fill[type='residential'],
 #bridge::fill[type='road'],
 #bridge::fill[type='service'],
 #bridge::fill[type='unclassified'],
-#bridge::fill[type='unknown']{
+#bridge::fill[type='unknown'] {
   [zoom>13]{
     line-color:@standard_fill;
     line-cap:round;
@@ -503,17 +493,12 @@
   [zoom=15]{ line-width:4; }
   [zoom>15]{ line-width:6; }
 }
-#minorroad_fill[type='living_street'],
-#minorroad_fill[type='residential'],
-#minorroad_fill[type='road'],
-#minorroad_fill[type='service'],
-#minorroad_fill[type='unclassified'],
-#minorroad_fill[type='unknown'] {
+#minorroad_fill {
   [zoom>13][tunnel=1] { line-opacity:0.4; }
 }
 
 /* ---- Track ----------------------------------------------------- */
-#minorroad_line[type='track'] {
+#track[type='track'] {
   [zoom>11] {
     line-color:@track;
     line-width:0.75;
@@ -527,7 +512,7 @@
 }
 
 /* ---- Footway --------------------------------------------------- */
-#minorroad_line[type='footway'] {
+#track[type='footway'] {
   [zoom>14] {
     line-width:1;
     line-dasharray:2,3;
@@ -536,7 +521,7 @@
 }
 
 /* ---- Pedestrian ------------------------------------------------ */
-#minorroad_line[type='pedestrian'][zoom>11] {
+#track[type='pedestrian'][zoom>11] {
   line-color:@ped_line;
   [zoom=12]{ line-width:0.75; }
   [zoom=13]{ line-width:1 + 1; }
@@ -547,7 +532,7 @@
   [zoom>17]{ line-width:3.5 + 2; }
 }
 
-#minorroad_fill[type='pedestrian'][zoom>12] {
+#track::fill[type='pedestrian'][zoom>12] {
   line-color:@ped_fill;
   [zoom=13]{ line-width:1; }
   [zoom=14]{ line-width:1.5; }
