@@ -11,6 +11,7 @@
 #place::country[type='country'][zoom>1][zoom<9] {
   text-name:'[name]';
   text-label-position-tolerance:1;
+  text-min-path-length:96;
   text-face-name:@sans;
   text-placement:point;
   text-fill:rgb(100,100,100);
@@ -20,6 +21,7 @@
 #place::city[type='city'][zoom>2][zoom<16] {
   text-name:'[name]';
   text-label-position-tolerance:1;
+  text-min-path-length:96;
   text-face-name:@sans;
   text-placement:point;
   text-fill:rgb(68,68,68);
@@ -37,6 +39,7 @@
 #place::town[type='town'][zoom>7] {
   text-name:'[name]';
   text-label-position-tolerance:1;
+  text-min-path-length:96;
   text-face-name:@sans;
   text-placement:point;
   text-fill:#666;
@@ -53,6 +56,7 @@
 #place::village[type='village'][zoom>10] {
   text-name:'[name]';
   text-label-position-tolerance:1;
+  text-min-path-length:96;
   text-face-name:@sans;
   text-placement:point;
   text-fill:#444;
@@ -69,6 +73,7 @@
 #place::small[type='locality'][zoom>12] {
   text-name:'[name]';
   text-label-position-tolerance:1;
+  text-min-path-length:96;
   text-face-name:@sans;
   text-placement:point;
   text-fill:#444;
@@ -91,6 +96,7 @@
 #water_label[zoom>17] {
   text-name:'[name]';
   text-label-position-tolerance:1;
+  text-min-path-length:96;
   text-face-name:@sans;
   text-fill:darken(@water,20);
   text-halo-fill:#fff;
@@ -120,6 +126,7 @@
   [type='park'],[type='golf_course'] {
     text-name:'[name]';
   text-label-position-tolerance:1;
+  text-min-path-length:96;
     text-face-name:@sans;
     text-fill:#000;
     text-halo-fill:#fff;
@@ -137,6 +144,7 @@
 #landuse_label[zoom>17] {
   text-name:'[name]';
   text-label-position-tolerance:1;
+  text-min-path-length:96;
   text-face-name:@sans;
   text-fill:#000;
   [type='pedestrian'] { text-fill:#333; }
@@ -154,6 +162,7 @@
 #motorway_label[type='trunk'][zoom>9] {
   text-name:'[ref]';
   text-label-position-tolerance:1;
+  text-min-path-length:96;
   text-face-name:@sans_bd;
   text-placement:line;
   text-fill:#444;
@@ -169,6 +178,7 @@
 #mainroad_label[type='tertiary'][zoom>13] {
   text-name:'[name]';
   text-label-position-tolerance:1;
+  text-min-path-length:96;
   text-face-name:@sans;
   text-placement:line;
   text-fill:#222;
@@ -181,6 +191,7 @@
 #minorroad_label[zoom>14] {
   text-name:'[name]';
   text-label-position-tolerance:1;
+  text-min-path-length:96;
   text-face-name:@sans;
   text-placement:line;
   text-fill:#222;
@@ -197,6 +208,7 @@
 #waterway_label[type='stream'][zoom>11] {
   text-name:'[name]';
   text-label-position-tolerance:1;
+  text-min-path-length:96;
   text-face-name:@sans;
   text-fill:darken(@water,20);
   text-halo-fill:#fff;
