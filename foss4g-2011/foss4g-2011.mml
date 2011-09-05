@@ -248,32 +248,6 @@
         "extent": "-12197658.2353032,4354107.45296023,-11359191.3507561,5097334.13614237", 
         "geometry_field": "geometry", 
         "host": "", 
-        "id": "building", 
-        "key_field": "", 
-        "max_size": 33, 
-        "password": "", 
-        "port": "5432", 
-        "project": "foss4g-2011", 
-        "srs": "+init=epsg:3857", 
-        "table": "(select geometry, type\nfrom osm_buildings\n) as building", 
-        "type": "postgis", 
-        "user": ""
-      }, 
-      "attributes": {
-        "cache-features": "true"
-      }, 
-      "class": "", 
-      "geometry": "polygon", 
-      "id": "building", 
-      "name": "building", 
-      "srs": "+init=epsg:3857"
-    }, 
-    {
-      "Datasource": {
-        "dbname": "osm", 
-        "extent": "-12197658.2353032,4354107.45296023,-11359191.3507561,5097334.13614237", 
-        "geometry_field": "geometry", 
-        "host": "", 
         "id": "rail", 
         "key_field": "", 
         "max_size": 33, 
