@@ -2,17 +2,17 @@
   "Layer": [
     {
       "Datasource": {
-        "file": "http://mapbox-geodata.s3.amazonaws.com/natural-earth-1.3.0/physical/10m-land.zip", 
+        "file": "http://thematicmapping.org/downloads/TM_WORLD_BORDERS-0.3.zip", 
         "id": "land", 
         "project": "foss4g-2011", 
-        "srs": "+init=epsg:3857", 
+        "srs": "+init=epsg:4326", 
         "type": "shape"
       }, 
       "class": "", 
       "geometry": "polygon", 
       "id": "land", 
       "name": "land", 
-      "srs": "+init=epsg:3857"
+      "srs": "+init=epsg:4326"
     }, 
     {
       "Datasource": {
