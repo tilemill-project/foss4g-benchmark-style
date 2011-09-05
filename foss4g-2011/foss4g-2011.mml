@@ -13,7 +13,21 @@
       "id": "land", 
       "name": "land", 
       "srs": "+init=epsg:4326"
-    }, 
+    },
+    {
+      "Datasource": {
+        "file": "layers/boundaries/boundaries.shp",
+        "id": "land",
+        "project": "foss4g-2011",
+        "srs": "+init=epsg:4326",
+        "type": "shape"
+      },
+      "class": "",
+      "geometry": "polygon",
+      "id": "borders",
+      "name": "borders",
+      "srs": "+init=epsg:4326"
+    },
     {
       "Datasource": {
         "dbname": "osm", 
