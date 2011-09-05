@@ -22,7 +22,9 @@
 
 Map { background-color:@water; }
 
-#land {
+#land[zoom<3],
+#shoreline_300[zoom>=3][zoom<7],
+#processed_p[zoom>=7] {
   polygon-fill:@land;
   polygon-gamma:0.75;
 }
