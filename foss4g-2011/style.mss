@@ -73,7 +73,7 @@ Map { background-color:@water; }
 
 /* ---- Waterways ------------------------------------------------- */
 
-#waterways_named[type='river'][zoom>5][zoom<=12]{
+#waterway[type='river'][zoom>5][zoom<=12]{
   line-color:@water;
   line-cap:round;
   line-join:round;

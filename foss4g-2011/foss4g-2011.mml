@@ -105,7 +105,7 @@
         "max_size": 33, 
         "password": "", 
         "port": "5432", 
-        "table": "(select geometry\nfrom osm_waterareas_gen0\nwhere round(st_area(geometry)) > 1000\n) as water", 
+        "table": "(select geometry\nfrom osm_waterareas_gen0\n) as water", 
         "type": "postgis", 
         "user": ""
       }, 
@@ -114,8 +114,8 @@
       }, 
       "class": "", 
       "geometry": "polygon", 
-      "id": "waterareasgen0", 
-      "name": "waterareasgen0", 
+      "id": "waterareas_gen0", 
+      "name": "waterareas_gen0", 
       "srs": "+init=epsg:3857"
     }, 
     {
@@ -128,7 +128,7 @@
         "max_size": 33, 
         "password": "", 
         "port": "5432", 
-        "table": "(select geometry\nfrom osm_waterareas_gen1\nwhere round(st_area(geometry)) > 1000\n) as water", 
+        "table": "(select geometry\nfrom osm_waterareas_gen1\n) as water", 
         "type": "postgis", 
         "user": ""
       }, 
@@ -163,30 +163,7 @@
       "id": "waterareas", 
       "name": "waterareas", 
       "srs": "+init=epsg:3857"
-    }, 
-    {
-      "Datasource": {
-        "dbname": "osm", 
-        "extent": "-12197658.2353032,4354107.45296023,-11359191.3507561,5097334.13614237", 
-        "geometry_field": "geometry", 
-        "host": "", 
-        "key_field": "", 
-        "max_size": 33, 
-        "password": "", 
-        "port": "5432", 
-        "table": "(select geometry, type\nfrom osm_waterways where name is not null\n) as waterway", 
-        "type": "postgis", 
-        "user": ""
-      }, 
-      "attributes": {
-        "cache-features": "true"
-      }, 
-      "class": "", 
-      "geometry": "linestring", 
-      "id": "waterways_named", 
-      "name": "waterways_named", 
-      "srs": "+init=epsg:3857"
-    }, 
+    },
     {
       "Datasource": {
         "dbname": "osm", 
