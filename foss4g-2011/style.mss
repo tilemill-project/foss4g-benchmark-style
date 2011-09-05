@@ -39,9 +39,9 @@ Map { background-color:@water; }
   [zoom>6] { line-width:1; }
 }
 
-#waterareas_gen0[zoom>3][zoom<=9],
-#waterareas_gen1[zoom>9][zoom<=12],
-#waterareas[zoom>12] {
+#waterareas_gen0[zoom>3][zoom<=5],
+#waterareas_gen1[zoom>5][zoom<=10],
+#waterareas[zoom>10] {
   polygon-fill:@water;
 }
 
