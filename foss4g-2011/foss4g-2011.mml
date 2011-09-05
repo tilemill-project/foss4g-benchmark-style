@@ -8,9 +8,6 @@
         "srs": "+init=epsg:3857", 
         "type": "shape"
       }, 
-      "attributes": {
-        "cache-features": "true"
-      }, 
       "class": "", 
       "geometry": "polygon", 
       "id": "land", 
@@ -33,9 +30,6 @@
         "table": "(select geometry, type, round(st_area(geometry)) as area\nfrom osm_landusages_gen0 where type in (\n'forest','park','golf_course','parking','school','residential','cemetery',\n'university','wood','commercial','industrial','stadium','sports_center',\n'pitch','hospital','college','pedestrian')\norder by area desc) as landusages", 
         "type": "postgis", 
         "user": ""
-      }, 
-      "attributes": {
-        "cache-features": "true"
       }, 
       "class": "", 
       "geometry": "polygon", 
@@ -60,9 +54,6 @@
         "type": "postgis", 
         "user": ""
       }, 
-      "attributes": {
-        "cache-features": "true"
-      }, 
       "class": "", 
       "geometry": "polygon", 
       "id": "landuse_gen1", 
@@ -86,9 +77,6 @@
         "type": "postgis", 
         "user": ""
       }, 
-      "attributes": {
-        "cache-features": "true"
-      }, 
       "class": "", 
       "geometry": "polygon", 
       "id": "landuse", 
@@ -108,9 +96,6 @@
         "table": "(select geometry\nfrom osm_waterareas_gen0\n) as water", 
         "type": "postgis", 
         "user": ""
-      }, 
-      "attributes": {
-        "cache-features": "true"
       }, 
       "class": "", 
       "geometry": "polygon", 
@@ -132,9 +117,6 @@
         "type": "postgis", 
         "user": ""
       }, 
-      "attributes": {
-        "cache-features": "true"
-      }, 
       "class": "", 
       "geometry": "polygon", 
       "id": "waterareas_gen1", 
@@ -155,15 +137,12 @@
         "type": "postgis", 
         "user": ""
       }, 
-      "attributes": {
-        "cache-features": "true"
-      }, 
       "class": "", 
       "geometry": "polygon", 
       "id": "waterareas", 
       "name": "waterareas", 
       "srs": "+init=epsg:3857"
-    },
+    }, 
     {
       "Datasource": {
         "dbname": "osm", 
@@ -180,9 +159,6 @@
         "table": "(select geometry, type\nfrom osm_waterways\n) as waterway", 
         "type": "postgis", 
         "user": ""
-      }, 
-      "attributes": {
-        "cache-features": "true"
       }, 
       "class": "", 
       "geometry": "linestring", 
@@ -207,9 +183,6 @@
         "type": "postgis", 
         "user": ""
       }, 
-      "attributes": {
-        "cache-features": "true"
-      }, 
       "class": "", 
       "geometry": "polygon", 
       "id": "transport_areas", 
@@ -232,9 +205,6 @@
         "table": "(select geometry, type from osm_aeroways\n) as aeroway", 
         "type": "postgis", 
         "user": ""
-      }, 
-      "attributes": {
-        "cache-features": "true"
       }, 
       "class": "", 
       "geometry": "linestring", 
@@ -259,9 +229,6 @@
         "type": "postgis", 
         "user": ""
       }, 
-      "attributes": {
-        "cache-features": "true"
-      }, 
       "class": "", 
       "geometry": "linestring", 
       "id": "rail", 
@@ -282,9 +249,6 @@
         "type": "postgis", 
         "user": ""
       }, 
-      "attributes": {
-        "cache-features": "true"
-      }, 
       "class": "", 
       "geometry": "linestring", 
       "id": "track", 
@@ -304,9 +268,6 @@
         "table": "(select geometry, type\nfrom osm_minorroads where type in ('living_street','residential','road','service','unclassified','unknown')\nand tunnel = 0\n) as road", 
         "type": "postgis", 
         "user": ""
-      }, 
-      "attributes": {
-        "cache-features": "true"
       }, 
       "class": "", 
       "geometry": "linestring", 
@@ -331,9 +292,6 @@
         "type": "postgis", 
         "user": ""
       }, 
-      "attributes": {
-        "cache-features": "true"
-      }, 
       "class": "", 
       "geometry": "linestring", 
       "id": "mainroad_line_gen0", 
@@ -356,9 +314,6 @@
         "table": "(select geometry, type\nfrom osm_roads_gen1\n) as road", 
         "type": "postgis", 
         "user": ""
-      }, 
-      "attributes": {
-        "cache-features": "true"
       }, 
       "class": "", 
       "geometry": "linestring", 
@@ -383,9 +338,6 @@
         "type": "postgis", 
         "user": ""
       }, 
-      "attributes": {
-        "cache-features": "true"
-      }, 
       "class": "", 
       "geometry": "linestring", 
       "id": "mainroad_line", 
@@ -409,9 +361,6 @@
         "type": "postgis", 
         "user": ""
       }, 
-      "attributes": {
-        "cache-features": "true"
-      }, 
       "class": "", 
       "geometry": "linestring", 
       "id": "motorway_line", 
@@ -431,9 +380,6 @@
         "table": "(select geometry, type, tunnel\nfrom osm_minorroads where type in ('living_street','residential','road','service','unclassified','unknown')\n) as road", 
         "type": "postgis", 
         "user": ""
-      }, 
-      "attributes": {
-        "cache-features": "true"
       }, 
       "class": "", 
       "geometry": "linestring", 
@@ -458,9 +404,6 @@
         "type": "postgis", 
         "user": ""
       }, 
-      "attributes": {
-        "cache-features": "true"
-      }, 
       "class": "", 
       "geometry": "linestring", 
       "id": "mainroad_fill_gen0", 
@@ -483,9 +426,6 @@
         "table": "(select geometry, type, tunnel\nfrom osm_roads_gen1\n) as roads", 
         "type": "postgis", 
         "user": ""
-      }, 
-      "attributes": {
-        "cache-features": "true"
       }, 
       "class": "", 
       "geometry": "linestring", 
@@ -510,9 +450,6 @@
         "type": "postgis", 
         "user": ""
       }, 
-      "attributes": {
-        "cache-features": "true"
-      }, 
       "class": "", 
       "geometry": "linestring", 
       "id": "mainroad_fill", 
@@ -535,9 +472,6 @@
         "table": "(select geometry, type, tunnel\nfrom osm_motorways\n) as road", 
         "type": "postgis", 
         "user": ""
-      }, 
-      "attributes": {
-        "cache-features": "true"
       }, 
       "class": "", 
       "geometry": "linestring", 
@@ -562,9 +496,6 @@
         "type": "postgis", 
         "user": ""
       }, 
-      "attributes": {
-        "cache-features": "true"
-      }, 
       "class": "", 
       "geometry": "linestring", 
       "id": "bridge", 
@@ -584,9 +515,6 @@
         "table": "(select geometry, type, name\nfrom osm_places\norder by z_order, population desc \n) as places", 
         "type": "postgis", 
         "user": ""
-      }, 
-      "attributes": {
-        "cache-features": "true"
       }, 
       "class": "", 
       "geometry": "point", 
@@ -611,9 +539,6 @@
         "type": "postgis", 
         "user": ""
       }, 
-      "attributes": {
-        "cache-features": "true"
-      }, 
       "class": "", 
       "geometry": "linestring", 
       "id": "motorway_label", 
@@ -637,9 +562,6 @@
         "type": "postgis", 
         "user": ""
       }, 
-      "attributes": {
-        "cache-features": "true"
-      }, 
       "class": "", 
       "geometry": "linestring", 
       "id": "mainroad_label", 
@@ -659,9 +581,6 @@
         "table": "(select geometry, type, name, oneway\nfrom osm_minorroads\nwhere name is not null and  type in ('living_street','residential','road','service','unclassified','unknown')\n) as label", 
         "type": "postgis", 
         "user": ""
-      }, 
-      "attributes": {
-        "cache-features": "true"
       }, 
       "class": "", 
       "geometry": "linestring", 
@@ -686,9 +605,6 @@
         "type": "postgis", 
         "user": ""
       }, 
-      "attributes": {
-        "cache-features": "true"
-      }, 
       "class": "", 
       "geometry": "polygon", 
       "id": "water_label", 
@@ -712,9 +628,6 @@
         "type": "postgis", 
         "user": ""
       }, 
-      "attributes": {
-        "cache-features": "true"
-      }, 
       "class": "", 
       "geometry": "polygon", 
       "id": "landuse_label", 
@@ -737,9 +650,6 @@
         "table": "(select geometry, type, name, round(st_length(geometry)) as length\nfrom osm_waterways\nwhere type in ('canal', 'river', 'stream') and name is not null\n) as label", 
         "type": "postgis", 
         "user": ""
-      }, 
-      "attributes": {
-        "cache-features": "true"
       }, 
       "class": "", 
       "geometry": "linestring", 
