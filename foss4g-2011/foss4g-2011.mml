@@ -2,7 +2,7 @@
   "Layer": [
     {
       "Datasource": {
-        "file": "http://thematicmapping.org/downloads/TM_WORLD_BORDERS-0.3.zip", 
+        "file": "http://tilemill-data.s3.amazonaws.com/osm/TM_WORLD_BORDERS-0.3.zip", 
         "id": "land", 
         "project": "foss4g-2011", 
         "srs": "+init=epsg:4326", 
@@ -36,7 +36,7 @@
     }, 
     {
       "Datasource": {
-        "file": "layers/boundaries/boundaries.shp", 
+        "file": "http://tilemill-data.s3.amazonaws.com/osm/boundaries.zip", 
         "id": "land", 
         "project": "foss4g-2011", 
         "srs": "+init=epsg:4326", 

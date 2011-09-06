@@ -10,15 +10,25 @@ dbname   = "osm"
 user     = "postgres"
 password = "postgres"
 
-# Land shapefiles required for the style. If you have already downloaded
+# shapefiles required for the style. If you have already downloaded
 # these or wish to use different versions, specify their paths here.
-# The latest versions can be downloaded from osm.org:
-# - http://tile.openstreetmap.org/processed_p.tar.bz2
-# - http://tile.openstreetmap.org/shoreline_300.tar.bz2
-processed_p = "http://tilemill-data.s3.amazonaws.com/osm/processed_p.zip"
-shoreline_300 = "http://tilemill-data.s3.amazonaws.com/osm/shoreline_300.zip"
 
-# Increase performance if you are only rendering a particular area by
+# by default will be downloaded first compile (will take ~20 minutes)
+processed_p = shoreline_300 = boundaries = tm_world = None
+
+# - http://tile.openstreetmap.org/processed_p.tar.bz2
+#processed_p = "/benchmarking/wms/2011/data/vector/osm_base_data/data/processed_p.shp"
+
+# - http://tile.openstreetmap.org/shoreline_300.tar.bz2
+#shoreline_300 = "/benchmarking/wms/2011/data/vector/osm_base_data/data/shoreline_300.shp"
+
+# - http://mapserver-utils.googlecode.com/svn/trunk/data/boundaries.shp
+#boundaries = "/benchmarking/wms/2011/data/vector/osm_base_data/data/boundaries.shp"
+
+# http://thematicmapping.org/downloads/TM_WORLD_BORDERS-0.3.zip
+#tm_world = "/benchmarking/wms/2011/data/vector/osm_base_data/data/TM_WORLD_BORDERS-0.3.shp"
+
+# Increase postgres startup performance if you are only rendering a particular area by
 # specifying a bounding box to restrict queries. Format is "XMIN,YMIN,XMAX,YMAX" in the
 # same units as the database (probably spherical mercator meters). The
 # whole world is "-20037508.34,-20037508.34,20037508.34,20037508.34".
@@ -51,10 +61,18 @@ with open(mml, 'w') as f:
       layer["Datasource"]["user"] = user
       layer["Datasource"]["password"] = password
       layer["Datasource"]["extent"] = extent
-    if layer["id"] == "shoreline_300":
-      layer["Datasource"]["file"] = shoreline_300
-    elif (layer["id"] == "processed_p") or (layer["id"] == "processed_p_outline"):
-      layer["Datasource"]["file"] = processed_p
+      layer["Datasource"]["srid"] = 3857
+      layer["Datasource"]["max_size"] = 33 
+    file_ds = layer["Datasource"].get("file")
+    if (file_ds):
+        if shoreline_300 and "shoreline_300" in file_ds:
+          layer["Datasource"]["file"] = shoreline_300
+        elif processed_p and "processed_p" in file_ds:
+          layer["Datasource"]["file"] = processed_p
+        elif tm_world and "TM_WORLD_BORDERS" in file_ds:
+          layer["Datasource"]["file"] = tm_world
+        elif boundaries and "boundaries" in file_ds:
+          layer["Datasource"]["file"] = boundaries
   f.write(json.dumps(newf, sort_keys=True, indent=2))
 f.closed
 

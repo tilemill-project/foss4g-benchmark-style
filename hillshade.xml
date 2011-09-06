@@ -1,8 +1,11 @@
+<!-- renders: http://cl.ly/0t3p3D0a320x0I0M2o2S -->
+
 <Map srs="+init=epsg:4269">
 
     <Style name="terrain">
         <Rule>
           <RasterSymbolizer>
+            <!-- http://trac.mapnik.org/wiki/RasterColorizer -->
             <RasterColorizer default-mode="linear">
               <stop color="#35A86E" value = "1003"/>
               <stop color="#FBFF80" value = "1800"/>
