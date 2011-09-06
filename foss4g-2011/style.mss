@@ -41,15 +41,11 @@ Map { background-color:@water; }
   [zoom>6] { line-width:1; }
 }
 
-#waterareas_gen0[zoom>3][zoom<=5],
-#waterareas_gen1[zoom>5][zoom<=10],
-#waterareas[zoom>10] {
+#waterareas[zoom>3] {
   polygon-fill:@water;
 }
 
-#landuse_gen0[zoom>3][zoom<=9],
-#landuse_gen1[zoom>9][zoom<=12],
-#landuse[zoom>12] {
+#landuse[zoom>3] {
   [type='pedestrian']   { polygon-fill:@pedestrian; }
   [type='college']      { polygon-fill:@school; }
   [type='hospital']     { polygon-fill:@hospital; }
