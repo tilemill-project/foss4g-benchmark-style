@@ -21,7 +21,8 @@
       "srs": "+init=epsg:3785", 
       "class": "", 
       "Datasource": {
-        "file": "http://tilemill-data.s3.amazonaws.com/osm/shoreline_300.zip"
+        "file": "http://tilemill-data.s3.amazonaws.com/osm/shoreline_300.zip",
+        "type": "shape"
       }
     }, 
     {
@@ -31,7 +32,8 @@
       "srs": "+init=epsg:3785", 
       "class": "", 
       "Datasource": {
-        "file": "http://tilemill-data.s3.amazonaws.com/osm/processed_p.zip"
+        "file": "http://tilemill-data.s3.amazonaws.com/osm/processed_p.zip",
+        "type": "shape"
       }
     }, 
     {
