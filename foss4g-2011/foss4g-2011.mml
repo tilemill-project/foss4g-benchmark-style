@@ -22,7 +22,7 @@
       "geometry": "polygon", 
       "id": "shoreline_300", 
       "name": "shoreline_300", 
-      "srs": "+init=epsg:3785"
+      "srs": "+init=epsg:3857"
     }, 
     {
       "Datasource": {
@@ -32,7 +32,7 @@
       "geometry": "polygon", 
       "id": "processed_p", 
       "name": "processed_p", 
-      "srs": "+init=epsg:3785"
+      "srs": "+init=epsg:3857"
     }, 
     {
       "Datasource": {
@@ -322,7 +322,7 @@
       "geometry": "linestring", 
       "id": "roads_line", 
       "name": "roads_line", 
-      "srs": "+init=epsg:3785"
+      "srs": "+init=epsg:3857"
     }, 
     {
       "Datasource": {
@@ -440,7 +440,7 @@
       "geometry": "linestring", 
       "id": "roads_fill", 
       "name": "roads_fill", 
-      "srs": "+init=epsg:3785"
+      "srs": "+init=epsg:3857"
     }, 
     {
       "Datasource": {
