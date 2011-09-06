@@ -16,7 +16,8 @@
     }, 
     {
       "Datasource": {
-        "file": "http://tilemill-data.s3.amazonaws.com/osm/shoreline_300.zip"
+        "file": "http://tilemill-data.s3.amazonaws.com/osm/shoreline_300.zip",
+        "type":"shape"
       }, 
       "class": "", 
       "geometry": "polygon", 
@@ -26,7 +27,8 @@
     }, 
     {
       "Datasource": {
-        "file": "http://tilemill-data.s3.amazonaws.com/osm/processed_p.zip"
+        "file": "http://tilemill-data.s3.amazonaws.com/osm/processed_p.zip",
+        "type": "shape"
       }, 
       "class": "", 
       "geometry": "polygon", 
