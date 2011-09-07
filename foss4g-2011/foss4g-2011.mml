@@ -184,14 +184,11 @@
         "dbname": "osm", 
         "extent": "-12197658.2353032,4354107.45296023,-11359191.3507561,5097334.13614237", 
         "geometry_field": "geometry", 
-        "host": "", 
         "key_field": "", 
-        "max_size": 33, 
-        "password": "", 
+        "max_size": "33", 
         "port": "5432", 
-        "table": "(select geometry, type\nfrom osm_minorroads where type in ('track','footway','pedestrian')\n) as track", 
-        "type": "postgis", 
-        "user": ""
+        "table": "(select geometry, type from osm_roads where type in ('track','footway','pedestrian')) as track", 
+        "type": "postgis"
       }, 
       "class": "", 
       "geometry": "linestring", 
