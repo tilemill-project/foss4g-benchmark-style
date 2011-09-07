@@ -227,23 +227,6 @@
         "key_field": "", 
         "max_size": "33", 
         "port": "5432", 
-        "table": "(select geometry, type from osm_roads_gen0\nwhere type in ('motorway','trunk')\n) as road", 
-        "type": "postgis"
-      }, 
-      "class": "", 
-      "geometry": "linestring", 
-      "id": "roads_line_gen0", 
-      "name": "roads_line_gen0", 
-      "srs": "+init=epsg:3857"
-    }, 
-    {
-      "Datasource": {
-        "dbname": "osm", 
-        "extent": "-12197658.2353032,4354107.45296023,-11359191.3507561,5097334.13614237", 
-        "geometry_field": "geometry", 
-        "key_field": "", 
-        "max_size": "33", 
-        "port": "5432", 
         "table": "(select geometry, type from osm_roads_gen1\nwhere type in ('motorway', 'motorway_link', 'trunk', 'trunk_link', 'primary')\n) as road", 
         "type": "postgis"
       }, 
