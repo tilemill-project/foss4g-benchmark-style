@@ -18,54 +18,78 @@
   text-size:10;
 }
 
-#place::city[type='city'][zoom>2][zoom<16] {
+#place::city[type='city'][zoom>2][zoom<10] {
+  shield-name:'[name]';
+  shield-file:url(images/dot-gray.png);
+  [zoom>7] { shield-file:url(images/dot-white.png); }
+  shield-text-dy:-10;
+  shield-face-name:@sans;
+  shield-placement:point;
+  shield-fill:rgb(68,68,68);
+  shield-size:10;
+  shield-halo-fill:#fff;
+  shield-halo-radius:1;
+  [zoom>8] { shield-halo-radius:2; shield-fill:#000; shield-size:11; }
+}
+#place::city[type='city'][zoom>=10][zoom<16] {
   text-name:'[name]';
-  text-label-position-tolerance:1;
-  text-min-path-length:96;
   text-face-name:@sans;
   text-placement:point;
-  text-fill:rgb(68,68,68);
-  text-size:10;
+  text-fill:rgb(0,0,0);
+  text-size:12;
   text-halo-fill:#fff;
-  text-halo-radius:1;
-  text-wrap-width: 50;
-  [zoom>8] { text-halo-radius:2; text-fill:#000; text-size:11; }
-  [zoom>9] { text-size:12; }
+  text-halo-radius:2;
   [zoom>10]{ text-size:13; }
   [zoom>12]{ text-size:14; }
   [zoom>14]{ text-size:15; }
 }
 
-#place::town[type='town'][zoom>7] {
+#place::town[type='town'][zoom>7][zoom<12] {
+  shield-name:'[name]';
+  shield-file:url(images/dot-gray.png);
+  shield-text-dy:-10;
+  shield-face-name:@sans;
+  shield-placement:point;
+  shield-fill:#666;
+  shield-size:10;
+  shield-halo-fill:#fff;
+  shield-halo-radius:1;
+  [zoom>8] { shield-halo-radius:2; }
+  [zoom>10]{ shield-size:11; shield-fill:#000; }
+}
+#place::town[type='town'][zoom>=12] {
   text-name:'[name]';
-  text-label-position-tolerance:1;
-  text-min-path-length:96;
   text-face-name:@sans;
   text-placement:point;
-  text-fill:#666;
-  text-size:10;
+  text-fill:#000;
+  text-size:12;
   text-halo-fill:#fff;
   text-halo-radius:1;
-  text-wrap-width: 50;
-  [zoom>8] { text-halo-radius:2; }
-  [zoom>10]{ text-size:11; text-fill:#000; }
-  [zoom>11]{ text-size:12; }
   [zoom>14]{ text-size:13; }
 }
 
-#place::village[type='village'][zoom>10] {
+#place::village[type='village'][zoom>10][zoom<14] {
+  shield-name:'[name]';
+  shield-file:url(images/dot-gray.png);
+  shield-text-dy:-10;
+  shield-face-name:@sans;
+  shield-placement:point;
+  shield-fill:#444;
+  shield-size:10;
+  shield-halo-fill:#fff;
+  shield-halo-radius:1;
+  [zoom>12] { shield-size:11; shield-fill:#000; }
+}
+#place::village[type='village'][zoom>=14] {
   text-name:'[name]';
   text-label-position-tolerance:1;
   text-min-path-length:96;
   text-face-name:@sans;
   text-placement:point;
-  text-fill:#444;
-  text-size:10;
+  text-fill:#000;
   text-halo-fill:#fff;
   text-halo-radius:1;
-  text-wrap-width: 50;
-  [zoom>12] { text-size:11; text-fill:#000; }
-  [zoom>14] { text-size:12; }
+  text-size:12;
 }
 
 #place::small[type='suburb'][zoom>12],
