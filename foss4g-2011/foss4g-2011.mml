@@ -63,7 +63,7 @@
         "port": "5432", 
         "project": "foss4g-2011", 
         "srs": "+init=epsg:3857", 
-        "table": "(select geometry, type, round(st_area(geometry)) as area\nfrom osm_landusages where type in (\n'forest','park','golf_course','parking','school','residential','cemetery',\n'university','wood','commercial','industrial','stadium','sports_center',\n'pitch','hospital','college','pedestrian')\norder by area desc) as landusages", 
+        "table": "(select geometry, type, round(st_area(geometry)) as area\nfrom osm_landusages where type in ('brownfield', 'cemetery', 'college', 'commercial', 'forest', 'golf_course', 'hospital', 'industrial', 'military', 'park', 'parking', 'pedestrian', 'pitch', 'residential', 'school', 'sports_center', 'stadium', 'university')\norder by area desc) as landusages", 
         "type": "postgis", 
         "user": ""
       }, 
@@ -388,7 +388,7 @@
         "max_size": 33, 
         "password": "", 
         "port": "5432", 
-        "table": "(select geometry, type, name\nfrom osm_places\norder by z_order, population desc \n) as places", 
+        "table": "(select geometry, type, name\nfrom osm_places where type in ('city','town') and name is not NULL order by population asc nulls first) as places", 
         "type": "postgis", 
         "user": ""
       }, 
