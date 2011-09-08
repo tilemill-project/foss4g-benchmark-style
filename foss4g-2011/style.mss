@@ -71,13 +71,18 @@ Map { background-color:@water; }
 
 /* ---- Waterways ------------------------------------------------- */
 
-#waterway[type='river'][zoom>5][zoom<=12]{
+/* at z6-z10 mapserver uses different query with: `where type='river'` */
+#waterway_low_river[zoom>=6][zoom<=10]{
   line-color:@water;
   [zoom=6] { line-width:0.15; }
   [zoom=7] { line-width:0.25; }
   [zoom=8] { line-width:0.5; }
   [zoom=9] { line-width:1; }
   [zoom=10]{ line-width:1; }
+}
+
+#waterway[type='river'][zoom>10][zoom<=12]{
+  line-color:@water;
   [zoom=11]{ line-width:2; }
   [zoom=12]{ line-width:2; }
   [zoom=13]{ line-width:3; }
