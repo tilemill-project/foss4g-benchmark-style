@@ -224,160 +224,120 @@
       "srs": "+init=epsg:3857"
     },
     {
+      "geometry": "linestring",
+      "name": "roads16",
+      "id": "roads16",
+      "srs": "+init=epsg:3857",
+      "class": "",
       "Datasource": {
-        "dbname": "osm", 
-        "extent": "-12197658.2353032,4354107.45296023,-11359191.3507561,5097334.13614237", 
-        "geometry_field": "geometry", 
-        "key_field": "", 
-        "max_size": "33", 
-        "port": "5432", 
-        "table": "(select geometry, type from osm_roads where type in ('track','footway','pedestrian')) as track", 
-        "type": "postgis"
-      }, 
-      "class": "", 
-      "geometry": "linestring", 
-      "id": "track", 
-      "name": "track", 
-      "srs": "+init=epsg:3857"
-    }, 
+        "table": "(select osm_id,geometry,name,ref,type,tunnel,bridge from osm_roads\n\twhere type in ('motorway','motorway_link','trunk','trunk_link','primary','primary_link',\n\t'secondary','secondary_link','tertiary','unclassified','residential','service','road','living_street',\n\t'track','pedestrian','footway')\n\torder by z_order asc) as foo",
+        "key_field": "",
+        "geometry_field": "geometry",
+        "extent": "",
+        "type": "postgis",
+        "dbname": "osm",
+        "port": "5432"
+      }
+    },
+    {
+      "geometry": "linestring",
+      "name": "roads14",
+      "id": "roads14",
+      "srs": "+init=epsg:3857",
+      "class": "",
+      "Datasource": {
+        "table": "(select osm_id,geometry,name,ref,type,tunnel,bridge from osm_roads\n\twhere type in ('motorway','motorway_link','trunk','trunk_link','primary','primary_link',\n\t'secondary','secondary_link','tertiary','unclassified','residential','service','road','living_street',\n\t'track','pedestrian')\n\torder by z_order asc) as foo",
+        "key_field": "",
+        "geometry_field": "geometry",
+        "extent": "-12197658.2353032,4354107.45296023,-11359191.3507561,5097334.13614237",
+        "type": "postgis",
+        "dbname": "osm",
+        "port": "5432"
+      }
+    },
+    {
+      "geometry": "linestring",
+      "name": "roads12",
+      "id": "roads12",
+      "srs": "+init=epsg:3857",
+      "class": "",
+      "Datasource": {
+        "table": "(select osm_id,geometry,name,ref,type from osm_roads\n\twhere type in ('motorway','motorway_link','trunk','trunk_link','primary','primary_link',\n\t'secondary','secondary_link','tertiary','unclassified','residential','service','road','living_street',\n\t'track','pedestrian')\n\torder by z_order asc) as foo",
+        "key_field": "",
+        "geometry_field": "geometry",
+        "extent": "-12197658.2353032,4354107.45296023,-11359191.3507561,5097334.13614237",
+        "type": "postgis",
+        "dbname": "osm",
+        "port": "5432"
+      }
+    },
+    {
+      "geometry": "linestring",
+      "name": "roads11",
+      "id": "roads11",
+      "srs": "+init=epsg:3857",
+      "class": "",
+      "Datasource": {
+        "table": "(select osm_id,geometry,name,ref,type from osm_roads\n\twhere type in ('motorway','motorway_link','trunk','trunk_link','primary','primary_link',\n\t'secondary','secondary_link','tertiary','unclassified','residential','service','road','living_street')\n\torder by z_order asc) as foo",
+        "key_field": "",
+        "geometry_field": "geometry",
+        "extent": "-12197658.2353032,4354107.45296023,-11359191.3507561,5097334.13614237",
+        "type": "postgis",
+        "dbname": "osm",
+        "port": "5432",
+        "id": "roads11",
+        "project": "foss4g-2011"
+      }
+    },
     {
       "Datasource": {
-        "dbname": "osm", 
-        "extent": "-12197658.2353032,4354107.45296023,-11359191.3507561,5097334.13614237", 
-        "geometry_field": "geometry", 
-        "key_field": "", 
-        "max_size": "33", 
-        "port": "5432", 
-        "table": "(select geometry, type from osm_roads where type in ('living_street','residential','road','service','unclassified','unknown') and tunnel = 0) as road", 
-        "type": "postgis"
-      }, 
-      "class": "", 
-      "geometry": "linestring", 
-      "id": "minorroad_line", 
-      "name": "minorroad_line", 
+        "table": "(select osm_id,geometry,name,ref,type from osm_roads\n\twhere type in ('motorway','motorway_link','trunk','trunk_link','primary','primary_link',\n\t'secondary','secondary_link','tertiary')\n\torder by z_order asc) as foo",
+        "key_field": "",
+        "geometry_field": "geometry",
+        "extent": "-12197658.2353032,4354107.45296023,-11359191.3507561,5097334.13614237",
+        "type": "postgis",
+        "dbname": "osm"
+      },
+      "class": "",
+      "geometry": "linestring",
+      "id": "roads10",
+      "name": "roads10",
       "srs": "+init=epsg:3857"
-    }, 
+    },
     {
       "Datasource": {
-        "dbname": "osm", 
-        "extent": "-12197658.2353032,4354107.45296023,-11359191.3507561,5097334.13614237", 
-        "geometry_field": "geometry", 
-        "key_field": "", 
-        "max_size": "33", 
-        "port": "5432", 
-        "table": "(select geometry, type from osm_roads_gen1\nwhere type in ('motorway', 'motorway_link', 'trunk', 'trunk_link', 'primary')\n) as road", 
-        "type": "postgis"
-      }, 
-      "class": "", 
-      "geometry": "linestring", 
-      "id": "roads_line_gen1", 
-      "name": "roads_line_gen1", 
+        "table": "(select osm_id,geometry,name,ref,type,tunnel,bridge from osm_roads_gen1 order by z_order asc) as foo",
+        "key_field": "",
+        "geometry_field": "geometry",
+        "extent": "-12197658.2353032,4354107.45296023,-11359191.3507561,5097334.13614237",
+        "type": "postgis",
+        "max_size": "33",
+        "dbname": "osm",
+        "port": "5432"
+      },
+      "class": "",
+      "geometry": "linestring",
+      "id": "roads_gen1",
+      "name": "roads_gen1",
       "srs": "+init=epsg:3857"
-    }, 
+    },
     {
       "Datasource": {
-        "dbname": "osm", 
-        "extent": "", 
-        "geometry_field": "geometry", 
-        "key_field": "", 
-        "table": "(select geometry, type, tunnel from osm_roads where type in ('motorway', 'motorway_link', 'trunk', 'trunk_link', 'primary', 'primary_link', 'secondary', 'secondary_link', 'tertiary', 'tertiary_link') order by z_order asc, st_length(geometry) asc) as road", 
-        "type": "postgis"
-      }, 
-      "class": "", 
-      "geometry": "linestring", 
-      "id": "roads_line", 
-      "name": "roads_line", 
+        "table": "(select osm_id,geometry,name,ref,type,tunnel,bridge from osm_roads_gen0 order by z_order asc) as foo",
+        "key_field": "",
+        "geometry_field": "geometry",
+        "extent": "-12197658.2353032,4354107.45296023,-11359191.3507561,5097334.13614237",
+        "type": "postgis",
+        "max_size": "33",
+        "dbname": "osm",
+        "port": "5432"
+      },
+      "class": "",
+      "geometry": "linestring",
+      "id": "roads_gen0",
+      "name": "roads_gen0",
       "srs": "+init=epsg:3857"
-    }, 
-    {
-      "Datasource": {
-        "dbname": "osm", 
-        "extent": "-12197658.2353032,4354107.45296023,-11359191.3507561,5097334.13614237", 
-        "geometry_field": "geometry", 
-        "key_field": "", 
-        "max_size": "33", 
-        "port": "5432", 
-        "table": "(select geometry, type, tunnel from osm_roads where type in ('living_street','residential','road','service','unclassified','unknown')\norder by z_order asc, st_length(geometry) asc) as road", 
-        "type": "postgis"
-      }, 
-      "class": "", 
-      "geometry": "linestring", 
-      "id": "minorroad_fill", 
-      "name": "minorroad_fill", 
-      "srs": "+init=epsg:3857"
-    }, 
-    {
-      "Datasource": {
-        "dbname": "osm", 
-        "extent": "-12197658.2353032,4354107.45296023,-11359191.3507561,5097334.13614237", 
-        "geometry_field": "geometry", 
-        "key_field": "", 
-        "table": "(select geometry, type, tunnel from osm_roads where type in ('motorway', 'motorway_link', 'trunk', 'trunk_link', 'primary', 'primary_link', 'secondary', 'secondary_link', 'tertiary', 'tertiary_link') order by z_order asc, st_length(geometry) asc) as road", 
-        "type": "postgis"
-      }, 
-      "class": "", 
-      "geometry": "linestring", 
-      "id": "roads_fill", 
-      "name": "roads_fill", 
-      "srs": "+init=epsg:3857"
-    }, 
-    {
-      "Datasource": {
-        "dbname": "osm", 
-        "extent": "-12197658.2353032,4354107.45296023,-11359191.3507561,5097334.13614237", 
-        "geometry_field": "geometry", 
-        "key_field": "", 
-        "max_size": "33", 
-        "port": "5432", 
-        "table": "(select geometry, type, tunnel from osm_roads_gen0\nwhere type in ('motorway','trunk')) as road", 
-        "type": "postgis"
-      }, 
-      "class": "", 
-      "geometry": "linestring", 
-      "id": "roads_fill_gen0", 
-      "name": "roads_fill_gen0", 
-      "srs": "+init=epsg:3857"
-    }, 
-    {
-      "Datasource": {
-        "dbname": "osm", 
-        "extent": "-12197658.2353032,4354107.45296023,-11359191.3507561,5097334.13614237", 
-        "geometry_field": "geometry", 
-        "key_field": "", 
-        "max_size": "33", 
-        "port": "5432", 
-        "table": "(select geometry, type, tunnel from osm_roads_gen1\nwhere type in ('motorway', 'motorway_link', 'trunk', 'trunk_link', 'primary')\n) as roads", 
-        "type": "postgis"
-      }, 
-      "class": "", 
-      "geometry": "linestring", 
-      "id": "roads_fill_gen1", 
-      "name": "roads_fill_gen1", 
-      "srs": "+init=epsg:3857"
-    }, 
-    {
-      "Datasource": {
-        "dbname": "osm", 
-        "extent": "-12197658.2353032,4354107.45296023,-11359191.3507561,5097334.13614237", 
-        "geometry_field": "geometry", 
-        "host": "", 
-        "id": "bridge", 
-        "key_field": "", 
-        "max_size": 33, 
-        "password": "", 
-        "port": "5432", 
-        "project": "foss4g-2011", 
-        "srs": "+init=epsg:3857", 
-        "table": "(select geometry, type, bridge, z_order\nfrom osm_roads where bridge = 1\norder by z_order) as road", 
-        "type": "postgis", 
-        "user": ""
-      }, 
-      "class": "", 
-      "geometry": "linestring", 
-      "id": "bridge", 
-      "name": "bridge", 
-      "srs": "+init=epsg:3857"
-    }, 
+    },
     {
       "Datasource": {
         "dbname": "osm", 
