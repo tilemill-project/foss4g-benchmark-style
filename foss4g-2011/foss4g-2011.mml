@@ -216,7 +216,7 @@
         "table": "(select geometry, type, tunnel from osm_railways_gen1 where type='rail') as railway", 
         "type": "postgis", 
         "user": "postgres"
-      } 
+      }, 
       "class": "", 
       "geometry": "linestring", 
       "id": "rail_gen1", 
