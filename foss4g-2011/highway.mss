@@ -268,6 +268,10 @@
 #roads_line_gen1[type='primary_link'][zoom=8],
 #roads_line[type='primary_link'][zoom>=9] {
   line-color:@primary_line;
+  [zoom>=13] {
+    line-cap:round;
+    line-join:round;
+  }
 }
 #roads_line_gen1[type='primary'],
 #roads_line_gen1[type='primary_link'] {
@@ -296,6 +300,10 @@
 #roads_fill[type='primary_link'][zoom>=9],
 #bridge::fill[type='primary_link'][zoom>12] {
   line-color:@primary_fill;
+  [zoom>=13] {
+    line-cap:round;
+    line-join:round;
+  }
 }
 #roads_fill[type='primary'][tunnel=1][zoom>12],
 #roads_fill[type='primary_link'][tunnel=1][zoom>12] {
@@ -337,7 +345,11 @@
 #roads_line[type='secondary_link'],
 #bridge::case[type='secondary_link'] {
   [zoom=13]{ line-width:2 + 2; }
-  [zoom=14]{ line-width:2.5 + 2; }
+  [zoom>=14]{ 
+    line-cap:round;
+    line-join:round;
+    line-width:2.5 + 2;
+  }
   [zoom=15]{ line-width:3.5 + 2; }
   [zoom=16]{ line-width:6 + 2; }
   [zoom=17]{ line-width:7 + 2; }
@@ -349,6 +361,10 @@
 #roads_fill[type='secondary_link'][zoom>9],
 #bridge::fill[type='secondary_link'][zoom>12] {
   line-color:@secondary_fill;
+  [zoom>=14]{ 
+    line-cap:round;
+    line-join:round;
+  }
 }
 #roads_fill[type='secondary'][tunnel=1][zoom>12],
 #roads_fill[type='secondary_link'][tunnel=1][zoom>12] {
@@ -375,6 +391,10 @@
 /* ---- Tertiary -------------------------------------------------- */
 #roads_line[type='tertiary'][zoom>=12] {
   line-color:@secondary_line;
+  [zoom>=14]{ 
+    line-cap:round;
+    line-join:round;
+  }
 }
 #roads_line[type='tertiary'] {
   [zoom=12]{ line-width:1 + 1; }
@@ -392,6 +412,10 @@
 #roads_fill[type='tertiary'][zoom>9],
 #bridge::fill[type='tertiary'][zoom>12] {
   line-color:@secondary_fill;
+  [zoom>=14]{ 
+    line-cap:round;
+    line-join:round;
+  }
 }
 #roads_fill[type='tertiary'][tunnel=1][zoom>12] {
   line-opacity:0.4;
@@ -419,7 +443,11 @@
   [zoom=11]{ line-width:0.5; }
   [zoom=12]{ line-width:0.5; }
   [zoom=13]{ line-width:0.5; }
-  [zoom=14]{ line-width:2.5 + 1; }
+  [zoom>=14]{ 
+    line-cap:round;
+    line-join:round;
+    line-width:2.5 + 1;
+  }
   [zoom=15]{ line-width:4 + 1; }
   [zoom>15]{ line-width:6 + 1; }
 }
@@ -442,10 +470,12 @@
 #bridge::fill[type='service'],
 #bridge::fill[type='unclassified'],
 #bridge::fill[type='unknown'] {
-  [zoom>13]{
+  [zoom>=14]{
     line-color:@standard_fill;
+    line-cap:round;
+    line-join:round;
+    line-width:2.5;
   }
-  [zoom=14]{ line-width:2.5; }
   [zoom=15]{ line-width:4; }
   [zoom>15]{ line-width:6; }
 }
