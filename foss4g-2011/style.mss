@@ -73,8 +73,6 @@ Map { background-color:@water; }
 
 #waterway[type='river'][zoom>5][zoom<=12]{
   line-color:@water;
-  line-cap:round;
-  line-join:round;
   [zoom=6] { line-width:0.15; }
   [zoom=7] { line-width:0.25; }
   [zoom=8] { line-width:0.5; }
@@ -92,8 +90,6 @@ Map { background-color:@water; }
 
 #waterway[type='river'][zoom>12] {
   line-color:@water;
-  line-cap:round;
-  line-join:round;
   [zoom=6] { line-width:0.15; }
   [zoom=7] { line-width:0.25; }
   [zoom=8] { line-width:0.5; }
@@ -111,8 +107,6 @@ Map { background-color:@water; }
 
 #waterway[type='stream'][zoom>9] {
   line-color:@water;
-  line-cap:round;
-  line-join:round;
   [zoom=10]{ line-width:0.5; }
   [zoom=11]{ line-width:0.5; }
   [zoom=12]{ line-width:1; }
@@ -122,8 +116,6 @@ Map { background-color:@water; }
 
 #waterway[type='canal'][zoom>9] {
   line-color:@water;
-  line-cap:round;
-  line-join:round;
   [zoom=10]{ line-width:0.5; }
   [zoom=11]{ line-width:0.5; }
   [zoom=12]{ line-width:1; }
@@ -137,8 +129,6 @@ Map { background-color:@water; }
 
 #waterway[type='stream'][zoom>9]{
   line-color:@water;
-  line-cap:round;
-  line-join:round;
   [zoom=10]{ line-width:0.5; }
   [zoom=11]{ line-width:0.5; }
   [zoom=12]{ line-width:1; }
@@ -148,8 +138,6 @@ Map { background-color:@water; }
 
 #waterway[type='canal'][zoom>9] {
   line-color:@water;
-  line-cap:round;
-  line-join:round;
   [zoom=10]{ line-width:0.5; }
   [zoom=11]{ line-width:0.5; }
   [zoom=12]{ line-width:1; }
