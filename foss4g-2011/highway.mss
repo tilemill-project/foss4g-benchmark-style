@@ -530,7 +530,9 @@
 
 /* ==== RAILWAY =================================================== */
 
-#rail[zoom>7] {
+#rail_gen1[zoom>=8][zoom<=11],
+#rail[zoom>11][zoom<=18],
+ {
   line-color:@rail;
   line-dasharray:2,2;
   line-width:0.5;

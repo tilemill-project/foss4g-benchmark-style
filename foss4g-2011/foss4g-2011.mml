@@ -201,7 +201,28 @@
       "id": "rail", 
       "name": "rail", 
       "srs": "+init=epsg:3857"
-    }, 
+    },
+    {
+      "Datasource": {
+        "dbname": "osm", 
+        "extent": "-12197658.2353032,4354107.45296023,-11359191.3507561,5097334.13614237", 
+        "geometry_field": "geometry", 
+        "host": "", 
+        "key_field": "", 
+        "max_size": 33, 
+        "password": "postgres", 
+        "port": "5432", 
+        "srid": 900913, 
+        "table": "(select geometry, type, tunnel from osm_railways_gen1 where type='rail') as railway", 
+        "type": "postgis", 
+        "user": "postgres"
+      } 
+      "class": "", 
+      "geometry": "linestring", 
+      "id": "rail_gen1", 
+      "name": "rail_gen1", 
+      "srs": "+init=epsg:3857"
+    },
     {
       "Datasource": {
         "dbname": "osm", 
