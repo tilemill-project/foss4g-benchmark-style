@@ -149,8 +149,8 @@
   [type='industrial'],[type='commercial'],[type='parking'],
   [type='park'],[type='golf_course'] {
     text-name:'[name]';
-  text-label-position-tolerance:1;
-  text-min-path-length:96;
+    text-label-position-tolerance:1;
+    text-min-path-length:96;
     text-face-name:@sans;
     text-fill:#000;
     text-halo-fill:#fff;
