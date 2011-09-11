@@ -65,12 +65,12 @@
     {
       "Datasource": {
         "dbname": "osm", 
-        "extent": "", 
+        "extent": "-12171329.262,4438253.48912,-11385029.0351,5012847.60088", 
         "geometry_field": "geometry", 
         "host": "", 
         "id": "landuse", 
         "key_field": "", 
-        "max_size": 33, 
+        "max_size": "33", 
         "password": "", 
         "port": "5432", 
         "project": "foss4g-2011", 
@@ -91,11 +91,11 @@
     {
       "Datasource": {
         "dbname": "osm", 
-        "extent": "", 
+        "extent": "-12141565.2692,4432115.32592,-11457784.0044,4994124.2693", 
         "geometry_field": "geometry", 
         "host": "", 
         "key_field": "", 
-        "max_size": 33, 
+        "max_size": "33", 
         "password": "", 
         "port": "5432", 
         "table": "(select geometry\nfrom osm_waterareas\n) as water", 
@@ -114,12 +114,12 @@
     {
       "Datasource": {
         "dbname": "osm", 
-        "extent": "", 
+        "extent": "-12209407.0973,4366623.24963,-11359466.2889,5010777.82708", 
         "geometry_field": "geometry", 
         "host": "", 
         "id": "waterway", 
         "key_field": "", 
-        "max_size": 33, 
+        "max_size": "33", 
         "password": "", 
         "port": "5432", 
         "project": "foss4g-2011", 
@@ -140,11 +140,11 @@
     {
       "Datasource": {
         "dbname": "osm", 
-        "extent": "", 
+        "extent": "-12209407.0973,4366623.24963,-11359466.2889,5010777.82708", 
         "geometry_field": "geometry", 
         "host": "", 
         "key_field": "", 
-        "max_size": 33, 
+        "max_size": "33", 
         "password": "", 
         "port": "5432", 
         "project": "foss4g-2011", 
@@ -166,12 +166,12 @@
     {
       "Datasource": {
         "dbname": "osm", 
-        "extent": "", 
+        "extent": "-12106969.6574,4498626.73172,-11386088.7311,4951354.10138", 
         "geometry_field": "geometry", 
         "host": "", 
         "id": "transport_areas", 
         "key_field": "", 
-        "max_size": 33, 
+        "max_size": "33", 
         "password": "", 
         "port": "5432", 
         "project": "foss4g-2011", 
@@ -192,12 +192,12 @@
     {
       "Datasource": {
         "dbname": "osm", 
-        "extent": "", 
+        "extent": "-12119171.4686,4438861.53791,-11386005.1281,4956670.81528", 
         "geometry_field": "geometry", 
         "host": "", 
         "id": "aeroway", 
         "key_field": "", 
-        "max_size": 33, 
+        "max_size": "33", 
         "password": "", 
         "port": "5432", 
         "project": "foss4g-2011", 
@@ -218,11 +218,11 @@
     {
       "Datasource": {
         "dbname": "osm", 
-        "extent": "", 
+        "extent": "-12197658.2353,4354107.45296,-11359325.0409,5029482.26092", 
         "geometry_field": "geometry", 
         "host": "", 
         "key_field": "", 
-        "max_size": 33, 
+        "max_size": "33", 
         "password": "", 
         "port": "5432", 
         "table": "(select geometry, type, tunnel from osm_railways where type='rail') as railway", 
@@ -241,11 +241,11 @@
     {
       "Datasource": {
         "dbname": "osm", 
-        "extent": "", 
+        "extent": "-12197658.2353,4354107.45296,-11359325.0409,5029482.26092", 
         "geometry_field": "geometry", 
         "host": "", 
         "key_field": "", 
-        "max_size": 33, 
+        "max_size": "33", 
         "password": "", 
         "port": "5432", 
         "srid": 900913, 
@@ -265,11 +265,11 @@
     {
       "Datasource": {
         "dbname": "osm", 
-        "extent": "", 
+        "extent": "-12197658.2353,4354107.45296,-11359191.3508,5097334.13614", 
         "geometry_field": "geometry", 
         "host": "", 
         "key_field": "", 
-        "max_size": 33, 
+        "max_size": "33", 
         "password": "", 
         "port": "5432", 
         "table": "(select geometry, type from osm_roads where type in ('track','footway','pedestrian')) as track", 
@@ -288,11 +288,11 @@
     {
       "Datasource": {
         "dbname": "osm", 
-        "extent": "", 
+        "extent": "-12197658.2353,4354107.45296,-11359191.3508,5097334.13614", 
         "geometry_field": "geometry", 
         "host": "", 
         "key_field": "", 
-        "max_size": 33, 
+        "max_size": "33", 
         "password": "", 
         "port": "5432", 
         "table": "(select geometry, type from osm_roads where type in ('living_street','residential','road','service','unclassified','unknown') and tunnel = 0) as road", 
@@ -311,11 +311,11 @@
     {
       "Datasource": {
         "dbname": "osm", 
-        "extent": "", 
+        "extent": "-12197658.2353,4354107.45296,-11359210.3854,5097334.13614", 
         "geometry_field": "geometry", 
         "host": "", 
         "key_field": "", 
-        "max_size": 33, 
+        "max_size": "33", 
         "password": "", 
         "port": "5432", 
         "table": "(select geometry, type from osm_roads_gen1\nwhere type in ('motorway', 'motorway_link', 'trunk', 'trunk_link', 'primary')\n) as road", 
@@ -334,11 +334,11 @@
     {
       "Datasource": {
         "dbname": "osm", 
-        "extent": "", 
+        "extent": "-12197658.2353,4354107.45296,-11359191.3508,5097334.13614", 
         "geometry_field": "geometry", 
         "host": "", 
         "key_field": "", 
-        "max_size": 33, 
+        "max_size": "33", 
         "password": "", 
         "port": "5432", 
         "table": "(select geometry, type, tunnel from osm_roads where type in ('motorway', 'motorway_link', 'trunk', 'trunk_link', 'primary', 'primary_link', 'secondary', 'secondary_link', 'tertiary', 'tertiary_link') order by z_order asc, st_length(geometry) asc) as road", 
@@ -357,11 +357,11 @@
     {
       "Datasource": {
         "dbname": "osm", 
-        "extent": "", 
+        "extent": "-12197658.2353,4354107.45296,-11359191.3508,5097334.13614", 
         "geometry_field": "geometry", 
         "host": "", 
         "key_field": "", 
-        "max_size": 33, 
+        "max_size": "33", 
         "password": "", 
         "port": "5432", 
         "table": "(select geometry, type, tunnel from osm_roads where type in ('living_street','residential','road','service','unclassified','unknown')\norder by z_order asc, st_length(geometry) asc) as road", 
@@ -380,11 +380,11 @@
     {
       "Datasource": {
         "dbname": "osm", 
-        "extent": "", 
+        "extent": "-12197658.2353,4354107.45296,-11359191.3508,5097334.13614", 
         "geometry_field": "geometry", 
         "host": "", 
         "key_field": "", 
-        "max_size": 33, 
+        "max_size": "33", 
         "password": "", 
         "port": "5432", 
         "table": "(select geometry, type, tunnel from osm_roads where type in ('motorway', 'motorway_link', 'trunk', 'trunk_link', 'primary', 'primary_link', 'secondary', 'secondary_link', 'tertiary', 'tertiary_link') order by z_order asc, st_length(geometry) asc) as road", 
@@ -403,11 +403,11 @@
     {
       "Datasource": {
         "dbname": "osm", 
-        "extent": "", 
+        "extent": "-12197658.2353,4354107.45296,-11359210.3854,5097334.13614", 
         "geometry_field": "geometry", 
         "host": "", 
         "key_field": "", 
-        "max_size": 33, 
+        "max_size": "33", 
         "password": "", 
         "port": "5432", 
         "table": "(select geometry, type, tunnel from osm_roads_gen0\nwhere type in ('motorway','trunk')) as road", 
@@ -426,11 +426,11 @@
     {
       "Datasource": {
         "dbname": "osm", 
-        "extent": "", 
+        "extent": "-12197658.2353,4354107.45296,-11359210.3854,5097334.13614", 
         "geometry_field": "geometry", 
         "host": "", 
         "key_field": "", 
-        "max_size": 33, 
+        "max_size": "33", 
         "password": "", 
         "port": "5432", 
         "table": "(select geometry, type, tunnel from osm_roads_gen1\nwhere type in ('motorway', 'motorway_link', 'trunk', 'trunk_link', 'primary')\n) as roads", 
@@ -449,12 +449,12 @@
     {
       "Datasource": {
         "dbname": "osm", 
-        "extent": "", 
+        "extent": "-12197658.2353,4354107.45296,-11359191.3508,5097334.13614", 
         "geometry_field": "geometry", 
         "host": "", 
         "id": "bridge", 
         "key_field": "", 
-        "max_size": 33, 
+        "max_size": "33", 
         "password": "", 
         "port": "5432", 
         "project": "foss4g-2011", 
@@ -475,11 +475,11 @@
     {
       "Datasource": {
         "dbname": "osm", 
-        "extent": "", 
+        "extent": "-12138536.9733,4438914.03058,-11363019.7554,5024548.00134", 
         "geometry_field": "geometry", 
         "host": "", 
         "key_field": "", 
-        "max_size": 33, 
+        "max_size": "33", 
         "password": "", 
         "port": "5432", 
         "table": "(select geometry, type, name\nfrom osm_places where type in ('city','town') and name is not NULL order by population asc nulls first) as places", 
@@ -498,11 +498,11 @@
     {
       "Datasource": {
         "dbname": "osm", 
-        "extent": "", 
+        "extent": "-12197658.2353,4354107.45296,-11359191.3508,5097334.13614", 
         "geometry_field": "geometry", 
         "host": "", 
         "key_field": "", 
-        "max_size": 33, 
+        "max_size": "33", 
         "password": "", 
         "port": "5432", 
         "table": "(select geometry, type, name, ref from osm_roads where name is not null or ref is not null or oneway = 1 and type in ('motorway', 'trunk')) as label", 
@@ -521,11 +521,11 @@
     {
       "Datasource": {
         "dbname": "osm", 
-        "extent": "", 
+        "extent": "-12197658.2353,4354107.45296,-11359191.3508,5097334.13614", 
         "geometry_field": "geometry", 
         "host": "", 
         "key_field": "", 
-        "max_size": 33, 
+        "max_size": "33", 
         "password": "", 
         "port": "5432", 
         "table": "(select geometry, type, name, oneway from osm_roads where name is not null or oneway = 1 and type in ('primary', 'secondary', 'tertiary')) as label", 
@@ -544,11 +544,11 @@
     {
       "Datasource": {
         "dbname": "osm", 
-        "extent": "", 
+        "extent": "-12197658.2353,4354107.45296,-11359191.3508,5097334.13614", 
         "geometry_field": "geometry", 
         "host": "", 
         "key_field": "", 
-        "max_size": 33, 
+        "max_size": "33", 
         "password": "", 
         "port": "5432", 
         "table": "(select geometry, type, name from osm_roads\nwhere name is not null and  type in ('living_street','residential','road','service','unclassified','unknown')\n) as label", 
@@ -567,11 +567,11 @@
     {
       "Datasource": {
         "dbname": "osm", 
-        "extent": "", 
+        "extent": "-12141565.2692,4432115.32592,-11457784.0044,4994124.2693", 
         "geometry_field": "geometry", 
         "host": "", 
         "key_field": "", 
-        "max_size": 33, 
+        "max_size": "33", 
         "password": "", 
         "port": "5432", 
         "table": "(select geometry, name, round(st_area(geometry)/1000) as area\nfrom osm_waterareas\nwhere type != 'riverbank' and name is not null\n) as label", 
@@ -590,12 +590,12 @@
     {
       "Datasource": {
         "dbname": "osm", 
-        "extent": "", 
+        "extent": "-12171329.262,4438253.48912,-11385029.0351,5012847.60088", 
         "geometry_field": "geometry", 
         "host": "", 
         "id": "landuse_label", 
         "key_field": "", 
-        "max_size": 33, 
+        "max_size": "33", 
         "password": "", 
         "port": "5432", 
         "project": "foss4g-2011", 
@@ -616,12 +616,12 @@
     {
       "Datasource": {
         "dbname": "osm", 
-        "extent": "", 
+        "extent": "-12209407.0973,4366623.24963,-11359466.2889,5010777.82708", 
         "geometry_field": "geometry", 
         "host": "", 
         "id": "waterway_label", 
         "key_field": "", 
-        "max_size": 33, 
+        "max_size": "33", 
         "password": "", 
         "port": "5432", 
         "project": "foss4g-2011", 
