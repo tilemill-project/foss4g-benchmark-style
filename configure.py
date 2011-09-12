@@ -52,8 +52,9 @@ f.closed
 with open(mml, 'w') as f:
   for layer in newf["Layer"]:
     if feat_caching:
-        layer["attributes"] = {}
-        layer["attributes"]["cache-features"] = "true"
+        layer["properties"] = {}
+        layer["properties"]["cache-features"] = "true"
+        layer["properties"]["deferred-labels"] = "true"
     if layer["Datasource"]["type"] == "postgis":
       layer["Datasource"]["host"] = host
       layer["Datasource"]["port"] = port
