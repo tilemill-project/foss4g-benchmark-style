@@ -1,0 +1,576 @@
+{
+  "bounds": [
+    -180,
+    -85.05112877980659,
+    180,
+    85.05112877980659
+  ],
+  "center": [
+    -105.06876826286096,
+    39.61604474089496,
+    13
+  ],
+  "format": "png",
+  "interactivity": false,
+  "minzoom": 0,
+  "maxzoom": 22,
+  "srs": "+init=epsg:3857",
+  "Stylesheet": [
+    "style.mss",
+    "highway.mss",
+    "labels.mss",
+    "notes"
+  ],
+  "Layer": [
+    {
+      "Datasource": {
+        "file": "http://tilemill-data.s3.amazonaws.com/osm/TM_WORLD_BORDERS-0.3.zip",
+        "id": "land",
+        "project": "foss4g-2011",
+        "srs": "+init=epsg:4326",
+        "type": "shape"
+      },
+      "properties": {
+        "cache-features": "true",
+        "deferred-labels": "true"
+      },
+      "class": "",
+      "geometry": "polygon",
+      "id": "land",
+      "name": "land",
+      "srs": "+init=epsg:4326"
+    },
+    {
+      "Datasource": {
+        "file": "http://tilemill-data.s3.amazonaws.com/osm/shoreline_300.zip",
+        "type": "shape"
+      },
+      "properties": {
+        "cache-features": "true",
+        "deferred-labels": "true"
+      },
+      "class": "",
+      "geometry": "polygon",
+      "id": "shoreline_300",
+      "name": "shoreline_300",
+      "srs": "+init=epsg:3857"
+    },
+    {
+      "Datasource": {
+        "file": "http://tilemill-data.s3.amazonaws.com/osm/processed_p.zip",
+        "type": "shape"
+      },
+      "properties": {
+        "cache-features": "true",
+        "deferred-labels": "true"
+      },
+      "class": "",
+      "geometry": "polygon",
+      "id": "processed_p",
+      "name": "processed_p",
+      "srs": "+init=epsg:3857"
+    },
+    {
+      "Datasource": {
+        "file": "http://tilemill-data.s3.amazonaws.com/osm/boundaries.zip",
+        "id": "borders",
+        "project": "foss4g-2011",
+        "srs": "+init=epsg:4326",
+        "type": "shape"
+      },
+      "properties": {
+        "cache-features": "true",
+        "deferred-labels": "true"
+      },
+      "class": "",
+      "geometry": "polygon",
+      "id": "borders",
+      "name": "borders",
+      "srs": "+init=epsg:4326"
+    },
+    {
+      "Datasource": {
+        "table": "(select geometry, type, name\nfrom osm_landusages where type in ('brownfield', 'cemetery', 'college', 'commercial', 'forest', 'golf_course', 'hospital', 'industrial', 'military', 'park', 'parking', 'pedestrian', 'pitch', 'residential', 'school', 'sports_center', 'stadium', 'university')\norder by area desc) as landusages",
+        "key_field": "",
+        "geometry_field": "geometry",
+        "extent": "-12171329.262,4438253.48912,-11385029.0351,5012847.60088",
+        "type": "postgis",
+        "max_size": "33",
+        "dbname": "osm",
+        "port": "5432"
+      },
+      "properties": {
+        "cache-features": "true",
+        "deferred-labels": "true"
+      },
+      "class": "",
+      "geometry": "polygon",
+      "id": "landuse",
+      "name": "landuse",
+      "srs": "+init=epsg:3857"
+    },
+    {
+      "Datasource": {
+        "table": "(select geometry, name from osm_waterareas) as water",
+        "key_field": "",
+        "geometry_field": "geometry",
+        "extent": "-12141565.2692,4432115.32592,-11457784.0044,4994124.2693",
+        "type": "postgis",
+        "max_size": "33",
+        "dbname": "osm",
+        "port": "5432"
+      },
+      "properties": {
+        "cache-features": "true",
+        "deferred-labels": "true"
+      },
+      "class": "",
+      "geometry": "polygon",
+      "id": "waterareas",
+      "name": "waterareas",
+      "srs": "+init=epsg:3857"
+    },
+    {
+      "Datasource": {
+        "table": "(select geometry, type, name from osm_waterways) as waterway",
+        "key_field": "",
+        "geometry_field": "geometry",
+        "extent": "-12209407.0973,4366623.24963,-11359466.2889,5010777.82708",
+        "type": "postgis",
+        "max_size": "33",
+        "dbname": "osm",
+        "port": "5432"
+      },
+      "properties": {
+        "cache-features": "true",
+        "deferred-labels": "true"
+      },
+      "class": "",
+      "geometry": "linestring",
+      "id": "waterway",
+      "name": "waterway",
+      "srs": "+init=epsg:3857"
+    },
+    {
+      "Datasource": {
+        "dbname": "osm",
+        "extent": "-12209407.0973,4366623.24963,-11359466.2889,5010777.82708",
+        "geometry_field": "geometry",
+        "host": "",
+        "key_field": "",
+        "max_size": "33",
+        "password": "",
+        "port": "5432",
+        "project": "foss4g-2011",
+        "srid": 900913,
+        "srs": "+init=epsg:3857",
+        "table": "(select geometry \nfrom osm_waterways where type='river'\n) as waterway",
+        "type": "postgis",
+        "user": ""
+      },
+      "properties": {
+        "cache-features": "true",
+        "deferred-labels": "true"
+      },
+      "class": "",
+      "geometry": "linestring",
+      "id": "waterway_low_river",
+      "name": "waterway_low_river",
+      "srs": "+init=epsg:3857"
+    },
+    {
+      "Datasource": {
+        "dbname": "osm",
+        "extent": "-12106969.6574,4498626.73172,-11386088.7311,4951354.10138",
+        "geometry_field": "geometry",
+        "host": "",
+        "id": "transport_areas",
+        "key_field": "",
+        "max_size": "33",
+        "password": "",
+        "port": "5432",
+        "project": "foss4g-2011",
+        "srs": "+init=epsg:3857",
+        "table": "(select geometry, type\nfrom osm_transport_areas\n) as transport",
+        "type": "postgis",
+        "user": ""
+      },
+      "properties": {
+        "cache-features": "true",
+        "deferred-labels": "true"
+      },
+      "class": "",
+      "geometry": "polygon",
+      "id": "transport_areas",
+      "name": "transport_areas",
+      "srs": "+init=epsg:3857"
+    },
+    {
+      "Datasource": {
+        "dbname": "osm",
+        "extent": "-12119171.4686,4438861.53791,-11386005.1281,4956670.81528",
+        "geometry_field": "geometry",
+        "host": "",
+        "id": "aeroway",
+        "key_field": "",
+        "max_size": "33",
+        "password": "",
+        "port": "5432",
+        "project": "foss4g-2011",
+        "srs": "+init=epsg:3857",
+        "table": "(select geometry, type from osm_aeroways\n) as aeroway",
+        "type": "postgis",
+        "user": ""
+      },
+      "properties": {
+        "cache-features": "true",
+        "deferred-labels": "true"
+      },
+      "class": "",
+      "geometry": "linestring",
+      "id": "aeroway",
+      "name": "aeroway",
+      "srs": "+init=epsg:3857"
+    },
+    {
+      "Datasource": {
+        "dbname": "osm",
+        "extent": "-12197658.2353,4354107.45296,-11359325.0409,5029482.26092",
+        "geometry_field": "geometry",
+        "host": "",
+        "key_field": "",
+        "max_size": "33",
+        "password": "",
+        "port": "5432",
+        "table": "(select geometry, type, tunnel from osm_railways where type='rail') as railway",
+        "type": "postgis",
+        "user": ""
+      },
+      "properties": {
+        "cache-features": "true",
+        "deferred-labels": "true"
+      },
+      "class": "",
+      "geometry": "linestring",
+      "id": "rail",
+      "name": "rail",
+      "srs": "+init=epsg:3857"
+    },
+    {
+      "Datasource": {
+        "dbname": "osm",
+        "extent": "-12197658.2353,4354107.45296,-11359325.0409,5029482.26092",
+        "geometry_field": "geometry",
+        "host": "",
+        "key_field": "",
+        "max_size": "33",
+        "password": "",
+        "port": "5432",
+        "srid": 900913,
+        "table": "(select geometry, type, tunnel from osm_railways_gen1 where type='rail') as railway",
+        "type": "postgis",
+        "user": ""
+      },
+      "properties": {
+        "cache-features": "true",
+        "deferred-labels": "true"
+      },
+      "class": "",
+      "geometry": "linestring",
+      "id": "rail_gen1",
+      "name": "rail_gen1",
+      "srs": "+init=epsg:3857"
+    },
+    {
+      "Datasource": {
+        "dbname": "osm",
+        "extent": "-12197658.2353,4354107.45296,-11359191.3508,5097334.13614",
+        "geometry_field": "geometry",
+        "host": "",
+        "key_field": "",
+        "max_size": "33",
+        "password": "",
+        "port": "5432",
+        "table": "(select geometry, type from osm_roads where type in ('track','footway','pedestrian')) as track",
+        "type": "postgis",
+        "user": ""
+      },
+      "properties": {
+        "cache-features": "true",
+        "deferred-labels": "true"
+      },
+      "class": "",
+      "geometry": "linestring",
+      "id": "track",
+      "name": "track",
+      "srs": "+init=epsg:3857"
+    },
+    {
+      "Datasource": {
+        "dbname": "osm",
+        "extent": "-12197658.2353,4354107.45296,-11359191.3508,5097334.13614",
+        "geometry_field": "geometry",
+        "host": "",
+        "key_field": "",
+        "max_size": "33",
+        "password": "",
+        "port": "5432",
+        "table": "(select geometry, type from osm_roads where type in ('living_street','residential','road','service','unclassified','unknown') and tunnel = 0) as road",
+        "type": "postgis",
+        "user": ""
+      },
+      "properties": {
+        "cache-features": "true",
+        "deferred-labels": "true"
+      },
+      "class": "",
+      "geometry": "linestring",
+      "id": "minorroad_line",
+      "name": "minorroad_line",
+      "srs": "+init=epsg:3857"
+    },
+    {
+      "Datasource": {
+        "dbname": "osm",
+        "extent": "-12197658.2353,4354107.45296,-11359210.3854,5097334.13614",
+        "geometry_field": "geometry",
+        "host": "",
+        "key_field": "",
+        "max_size": "33",
+        "password": "",
+        "port": "5432",
+        "table": "(select geometry, type from osm_roads_gen1\nwhere type in ('motorway', 'motorway_link', 'trunk', 'trunk_link', 'primary')\n) as road",
+        "type": "postgis",
+        "user": ""
+      },
+      "properties": {
+        "cache-features": "true",
+        "deferred-labels": "true"
+      },
+      "class": "",
+      "geometry": "linestring",
+      "id": "roads_line_gen1",
+      "name": "roads_line_gen1",
+      "srs": "+init=epsg:3857"
+    },
+    {
+      "Datasource": {
+        "table": "(select geometry, name, ref, type, tunnel from osm_roads where type in ('motorway', 'motorway_link', 'trunk', 'trunk_link', 'primary', 'primary_link', 'secondary', 'secondary_link', 'tertiary', 'tertiary_link') order by z_order asc, st_length(geometry) asc) as road",
+        "key_field": "",
+        "geometry_field": "geometry",
+        "extent": "-12197658.2353,4354107.45296,-11359191.3508,5097334.13614",
+        "type": "postgis",
+        "max_size": "33",
+        "dbname": "osm",
+        "port": "5432"
+      },
+      "properties": {
+        "cache-features": "true",
+        "deferred-labels": "true"
+      },
+      "class": "",
+      "geometry": "linestring",
+      "id": "roads_line",
+      "name": "roads_line",
+      "srs": "+init=epsg:3857"
+    },
+    {
+      "Datasource": {
+        "dbname": "osm",
+        "extent": "-12197658.2353,4354107.45296,-11359191.3508,5097334.13614",
+        "geometry_field": "geometry",
+        "host": "",
+        "key_field": "",
+        "max_size": "33",
+        "password": "",
+        "port": "5432",
+        "table": "(select geometry, type, tunnel from osm_roads where type in ('living_street','residential','road','service','unclassified','unknown')\norder by z_order asc, st_length(geometry) asc) as road",
+        "type": "postgis",
+        "user": ""
+      },
+      "properties": {
+        "cache-features": "true",
+        "deferred-labels": "true"
+      },
+      "class": "",
+      "geometry": "linestring",
+      "id": "minorroad_fill",
+      "name": "minorroad_fill",
+      "srs": "+init=epsg:3857"
+    },
+    {
+      "Datasource": {
+        "dbname": "osm",
+        "extent": "-12197658.2353,4354107.45296,-11359191.3508,5097334.13614",
+        "geometry_field": "geometry",
+        "host": "",
+        "key_field": "",
+        "max_size": "33",
+        "password": "",
+        "port": "5432",
+        "table": "(select geometry, type, tunnel from osm_roads where type in ('motorway', 'motorway_link', 'trunk', 'trunk_link', 'primary', 'primary_link', 'secondary', 'secondary_link', 'tertiary', 'tertiary_link') order by z_order asc, st_length(geometry) asc) as road",
+        "type": "postgis",
+        "user": ""
+      },
+      "properties": {
+        "cache-features": "true",
+        "deferred-labels": "true"
+      },
+      "class": "",
+      "geometry": "linestring",
+      "id": "roads_fill",
+      "name": "roads_fill",
+      "srs": "+init=epsg:3857"
+    },
+    {
+      "Datasource": {
+        "dbname": "osm",
+        "extent": "-12197658.2353,4354107.45296,-11359210.3854,5097334.13614",
+        "geometry_field": "geometry",
+        "host": "",
+        "key_field": "",
+        "max_size": "33",
+        "password": "",
+        "port": "5432",
+        "table": "(select geometry, type, tunnel from osm_roads_gen0\nwhere type in ('motorway','trunk')) as road",
+        "type": "postgis",
+        "user": ""
+      },
+      "properties": {
+        "cache-features": "true",
+        "deferred-labels": "true"
+      },
+      "class": "",
+      "geometry": "linestring",
+      "id": "roads_fill_gen0",
+      "name": "roads_fill_gen0",
+      "srs": "+init=epsg:3857"
+    },
+    {
+      "Datasource": {
+        "dbname": "osm",
+        "extent": "-12197658.2353,4354107.45296,-11359210.3854,5097334.13614",
+        "geometry_field": "geometry",
+        "host": "",
+        "key_field": "",
+        "max_size": "33",
+        "password": "",
+        "port": "5432",
+        "table": "(select geometry, type, tunnel from osm_roads_gen1\nwhere type in ('motorway', 'motorway_link', 'trunk', 'trunk_link', 'primary')\n) as roads",
+        "type": "postgis",
+        "user": ""
+      },
+      "properties": {
+        "cache-features": "true",
+        "deferred-labels": "true"
+      },
+      "class": "",
+      "geometry": "linestring",
+      "id": "roads_fill_gen1",
+      "name": "roads_fill_gen1",
+      "srs": "+init=epsg:3857"
+    },
+    {
+      "Datasource": {
+        "dbname": "osm",
+        "extent": "-12197658.2353,4354107.45296,-11359191.3508,5097334.13614",
+        "geometry_field": "geometry",
+        "host": "",
+        "id": "bridge",
+        "key_field": "",
+        "max_size": "33",
+        "password": "",
+        "port": "5432",
+        "project": "foss4g-2011",
+        "srs": "+init=epsg:3857",
+        "table": "(select geometry, type, bridge, z_order\nfrom osm_roads where bridge = 1\norder by z_order) as road",
+        "type": "postgis",
+        "user": ""
+      },
+      "properties": {
+        "cache-features": "true",
+        "deferred-labels": "true"
+      },
+      "class": "",
+      "geometry": "linestring",
+      "id": "bridge",
+      "name": "bridge",
+      "srs": "+init=epsg:3857"
+    },
+    {
+      "Datasource": {
+        "dbname": "osm",
+        "extent": "-12138536.9733,4438914.03058,-11363019.7554,5024548.00134",
+        "geometry_field": "geometry",
+        "host": "",
+        "key_field": "",
+        "max_size": "33",
+        "password": "",
+        "port": "5432",
+        "table": "(select geometry, type, name\nfrom osm_places where type in ('city','town') and name is not NULL order by population asc nulls first) as places",
+        "type": "postgis",
+        "user": ""
+      },
+      "properties": {
+        "cache-features": "true",
+        "deferred-labels": "true"
+      },
+      "class": "",
+      "geometry": "point",
+      "id": "place",
+      "name": "place",
+      "srs": "+init=epsg:3857"
+    },
+    {
+      "Datasource": {
+        "dbname": "osm",
+        "extent": "-12141565.2692,4432115.32592,-11457784.0044,4994124.2693",
+        "geometry_field": "geometry",
+        "host": "",
+        "key_field": "",
+        "max_size": "33",
+        "password": "",
+        "port": "5432",
+        "table": "(select geometry, name, round(st_area(geometry)/1000) as area\nfrom osm_waterareas\nwhere type != 'riverbank' and name is not null\n) as label",
+        "type": "postgis",
+        "user": ""
+      },
+      "properties": {
+        "cache-features": "true",
+        "deferred-labels": "true"
+      },
+      "class": "",
+      "geometry": "polygon",
+      "id": "water_label",
+      "name": "water_label",
+      "srs": "+init=epsg:3857"
+    },
+    {
+      "Datasource": {
+        "dbname": "osm",
+        "extent": "-12171329.262,4438253.48912,-11385029.0351,5012847.60088",
+        "geometry_field": "geometry",
+        "host": "",
+        "id": "landuse_label",
+        "key_field": "",
+        "max_size": "33",
+        "password": "",
+        "port": "5432",
+        "project": "foss4g-2011",
+        "srs": "+init=epsg:3857",
+        "table": "(select geometry, type, name, round(st_area(geometry)) as area\nfrom osm_landusages\nwhere name is not null\norder by area desc) as label",
+        "type": "postgis",
+        "user": ""
+      },
+      "properties": {
+        "cache-features": "true",
+        "deferred-labels": "true"
+      },
+      "class": "",
+      "geometry": "polygon",
+      "id": "landuse_label",
+      "name": "landuse_label",
+      "srs": "+init=epsg:3857"
+    }
+  ]
+}

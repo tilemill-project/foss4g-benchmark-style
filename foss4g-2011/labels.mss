@@ -110,14 +110,7 @@
 
 /* ==== WATER BODIES ============================================== */
 
-#water_label[zoom>10][area>1600000],
-#water_label[zoom>11][area>4000000],
-#water_label[zoom>12][area>1000000],
-#water_label[zoom>13][area>500000],
-#water_label[zoom>14][area>250000],
-#water_label[zoom>15][area>125000],
-#water_label[zoom>16][area>62500],
-#water_label[zoom>17] {
+#waterareas[zoom>10] {
   text-name:'[name]';
   text-label-position-tolerance:1;
   text-min-path-length:96;
@@ -132,20 +125,7 @@
 
 /* ==== LANDUSAGES ================================================ */
 
-/* Z11+
- *  - industrial/commercial/parking
- *  - park/golf_course 
- * Z12+
- *  - forest/wood
- *  - residential
- *  - pedestrian
- *  - cemetery
- *  - hospital
- *  - school/college/university
- *  - sports_center/stadium/pitch
- */
-
-#landuse_label[zoom>12][area>1000000] {
+#landuse[zoom>12] {
   [type='industrial'],[type='commercial'],[type='parking'],
   [type='park'],[type='golf_course'] {
     text-name:'[name]';
@@ -160,12 +140,7 @@
     text-wrap-width:20;
   }
 }
-#landuse_label[zoom>12][area>1000000],
-#landuse_label[zoom>13][area>500000],
-#landuse_label[zoom>14][area>250000],
-#landuse_label[zoom>15][area>125000],
-#landuse_label[zoom>16][area>62500],
-#landuse_label[zoom>17] {
+#landuse[zoom>12] {
   text-name:'[name]';
   text-label-position-tolerance:1;
   text-min-path-length:96;
@@ -182,8 +157,8 @@
 
 /* ==== ROADS ===================================================== */
 
-#motorway_label[type='motorway'][zoom>9],
-#motorway_label[type='trunk'][zoom>9] {
+#roads_line[type='motorway'][zoom>9],
+#roads_line[type='trunk'][zoom>9] {
   text-name:'[ref]';
   text-label-position-tolerance:1;
   text-min-path-length:96;
@@ -197,9 +172,9 @@
   [zoom=13] { text-min-distance:100; }
 }
 
-#mainroad_label[type='primary'][zoom>12],
-#mainroad_label[type='secondary'][zoom>13],
-#mainroad_label[type='tertiary'][zoom>13] {
+#roads_line[type='primary'][zoom>12],
+#roads_line[type='secondary'][zoom>13],
+#roads_line[type='tertiary'][zoom>13] {
   text-name:'[name]';
   text-label-position-tolerance:1;
   text-min-path-length:96;
@@ -212,7 +187,11 @@
   text-size:11;
 }
 
-#minorroad_label[zoom>14] {
+#roads_line[type='road'][zoom>14],
+#roads_line[type='residential'][zoom>14],
+#roads_line[type='living_street'][zoom>14],
+#roads_line[type='unclassified'][zoom>14],
+#roads_line[type='unknown'][zoom>14] {
   text-name:'[name]';
   text-label-position-tolerance:1;
   text-min-path-length:96;
@@ -227,9 +206,9 @@
 
 /* ==== WATERWAYS ================================================= */
 
-#waterway_label[type='river'][zoom>5],
-#waterway_label[type='canal'][zoom>9],
-#waterway_label[type='stream'][zoom>11] {
+#waterway[type='river'][zoom>5],
+#waterway[type='canal'][zoom>9],
+#waterway[type='stream'][zoom>11] {
   text-name:'[name]';
   text-label-position-tolerance:1;
   text-min-path-length:96;

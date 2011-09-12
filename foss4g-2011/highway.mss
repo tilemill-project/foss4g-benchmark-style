@@ -73,11 +73,13 @@
 
 #roads_fill_gen0[type='motorway'][zoom=5],
 #roads_fill_gen1[type='motorway'][zoom>5][zoom<9],
-#roads_fill[type='motorway'][zoom>=9],
-#bridge::fill[type='motorway'][zoom>12] {
+#roads_fill[type='motorway'][zoom>=9] {
   line-color:@motorway_fill;
   line-cap:round;
   line-join:round;
+}
+#bridge::fill[type='motorway'][zoom>12] {
+  line-color:@motorway_fill;
 }
 #roads_fill[type='motorway'][tunnel=1][zoom>12] {
   line-opacity:0.4;
