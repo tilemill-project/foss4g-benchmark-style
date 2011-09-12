@@ -82,27 +82,8 @@ Map { background-color:@water; }
   [zoom=10]{ line-width:1; }
 }
 
-#waterway[type='river'][zoom>10][zoom<=12]{
+#waterway[type='river'][zoom>10]{
   line-color:@water;
-  [zoom=11]{ line-width:2; }
-  [zoom=12]{ line-width:2; }
-  [zoom=13]{ line-width:3; }
-  [zoom=14]{ line-width:3; }
-  [zoom=15]{ line-width:4; }
-  [zoom=16]{ line-width:5; }
-  [zoom=17]{ line-width:6; }
-  [zoom>17]{ line-width:7; }
-}
-
-#waterway[type='river'][zoom>12] {
-  line-color:@water;
-  line-rasterizer:fast;
-  [zoom=6] { line-width:0.15; }
-  [zoom=7] { line-width:0.25; }
-  [zoom=8] { line-width:0.5; }
-  [zoom=9] { line-width:1; }
-  [zoom=10]{ line-width:1; }
-  [zoom>10]{ line-rasterizer:full; }
   [zoom=11]{ line-width:2; }
   [zoom=12]{ line-width:2; }
   [zoom=13]{ line-width:3; }
@@ -126,31 +107,6 @@ Map { background-color:@water; }
 #waterway[type='canal'][zoom>9] {
   line-color:@water;
   line-rasterizer:full;
-  [zoom=10]{ line-width:0.5; }
-  [zoom=11]{ line-width:0.5; }
-  [zoom=12]{ line-width:1; }
-  [zoom=13]{ line-width:1; }
-  [zoom>13]{ line-rasterizer:full; }
-  [zoom=14]{ line-width:2; }
-  [zoom=15]{ line-width:4; }
-  [zoom=16]{ line-width:8; }
-  [zoom=17]{ line-width:16; }
-  [zoom>17]{ line-width:30; }
-}
-
-#waterway[type='stream'][zoom>9]{
-  line-color:@water;
-  line-rasterizer:fast;
-  [zoom=10]{ line-width:0.5; }
-  [zoom=11]{ line-width:0.5; }
-  [zoom=12]{ line-width:1; }
-  [zoom=13]{ line-width:1; }
-  [zoom>13]{ line-width:2; line-rasterizer:full; }
-}
-
-#waterway[type='canal'][zoom>9] {
-  line-color:@water;
-  line-rasterizer:fast;
   [zoom=10]{ line-width:0.5; }
   [zoom=11]{ line-width:0.5; }
   [zoom=12]{ line-width:1; }
