@@ -83,10 +83,10 @@
   line-opacity:0.4;
 }
 #roads_fill_gen0[type='motorway'] {
-  [zoom=5] { line-width:0.5; }
+  [zoom=5] { line-width:0.5; line-rasterizer:fast; }
 }
 #roads_fill_gen1[type='motorway'] {
-  [zoom=6] { line-width:0.5; }
+  [zoom=6] { line-width:0.5; line-rasterizer:fast; }
   [zoom=7] { line-width:0.5; }
   [zoom=8] { line-width:1; }
 }
@@ -311,7 +311,7 @@
 }
 #roads_fill[type='primary'],
 #roads_fill[type='primary_link'] {
-  [zoom=9] { line-width:0.75 ; }
+  [zoom=9] { line-width:0.75; line-rasterizer:fast; }
   [zoom=10]{ line-width:1; }
   [zoom=11]{ line-width:1.5; }
   [zoom=12]{ line-width:2; }
@@ -426,8 +426,8 @@
   line-opacity:0.4;
 }
 #roads_fill[type='tertiary'] {
-  [zoom=10]{ line-width:0.5; line-color:@standard_line; }
-  [zoom=11]{ line-width:0.75; line-color:@standard_line; }
+  [zoom=10]{ line-width:0.5; line-color:@standard_line; line-rasterizer:fast;  }
+  [zoom=11]{ line-width:0.75; line-color:@standard_line; line-rasterizer:fast;  }
   [zoom=12]{ line-width:1; }
 }
 #roads_fill[type='tertiary'],
@@ -444,6 +444,7 @@
 #minorroad_line {
   [zoom>10]{
     line-color:@standard_line;
+    line-rasterizer:fast; 
   }
   [zoom=11]{ line-width:0.5; }
   [zoom=12]{ line-width:0.5; }
@@ -452,6 +453,7 @@
     line-cap:round;
     line-join:round;
     line-width:2.5 + 1;
+    line-rasterizer:full; 
   }
   [zoom=15]{ line-width:4 + 1; }
   [zoom>15]{ line-width:6 + 1; }
@@ -514,7 +516,7 @@
 /* ---- Pedestrian ------------------------------------------------ */
 #track[type='pedestrian'][zoom>11] {
   line-color:@ped_line;
-  [zoom=12]{ line-width:0.75; }
+  [zoom=12]{ line-width:0.75; line-rasterizer:fast; }
   [zoom=13]{ line-width:1 + 1; }
   [zoom=14]{ line-width:1.5 + 1; }
   [zoom=15]{ line-width:2 + 1; }
@@ -563,9 +565,9 @@
     [zoom>17]{ line-width:23; }
   }
   [type='taxiway'] {
-    [zoom=10]{ line-width:0.2; }
-    [zoom=11]{ line-width:0.2; }
-    [zoom=12]{ line-width:0.2; }
+    [zoom=10]{ line-width:0.2; line-rasterizer:fast; }
+    [zoom=11]{ line-width:0.2; line-rasterizer:fast; }
+    [zoom=12]{ line-width:0.2; line-rasterizer:fast; }
     [zoom=13]{ line-width:1; }
     [zoom=14]{ line-width:1.5; }
     [zoom=15]{ line-width:2; }
