@@ -498,57 +498,6 @@
         "deferred-labels": "true"
       }, 
       "srs": "+init=epsg:3857"
-    }, 
-    {
-      "Datasource": {
-        "dbname": "osm", 
-        "extent": "-12141565.2692,4432115.32592,-11457784.0044,4994124.2693", 
-        "geometry_field": "geometry", 
-        "host": "", 
-        "key_field": "", 
-        "max_size": "33", 
-        "password": "", 
-        "port": "5432", 
-        "table": "(select geometry, name, round(st_area(geometry)/1000) as area\nfrom osm_waterareas\nwhere type != 'riverbank' and name is not null\n) as label", 
-        "type": "postgis", 
-        "user": ""
-      }, 
-      "class": "", 
-      "geometry": "polygon", 
-      "id": "water_label", 
-      "name": "water_label", 
-      "properties": {
-        "cache-features": "true", 
-        "deferred-labels": "true"
-      }, 
-      "srs": "+init=epsg:3857"
-    }, 
-    {
-      "Datasource": {
-        "dbname": "osm", 
-        "extent": "-12171329.262,4438253.48912,-11385029.0351,5012847.60088", 
-        "geometry_field": "geometry", 
-        "host": "", 
-        "id": "landuse_label", 
-        "key_field": "", 
-        "max_size": "33", 
-        "password": "", 
-        "port": "5432", 
-        "project": "foss4g-2011", 
-        "srs": "+init=epsg:3857", 
-        "table": "(select geometry, type, name, round(st_area(geometry)) as area\nfrom osm_landusages\nwhere name is not null\norder by area desc) as label", 
-        "type": "postgis", 
-        "user": ""
-      }, 
-      "class": "", 
-      "geometry": "polygon", 
-      "id": "landuse_label", 
-      "name": "landuse_label", 
-      "properties": {
-        "cache-features": "true", 
-        "deferred-labels": "true"
-      }, 
-      "srs": "+init=epsg:3857"
     }
   ], 
   "Stylesheet": [
