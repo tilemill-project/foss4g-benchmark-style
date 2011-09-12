@@ -9,7 +9,8 @@
         "type": "shape"
       }, 
       "attributes": {
-        "cache-features": "true"
+        "cache-features": "true", 
+        "deferred-labels": "true"
       }, 
       "class": "", 
       "geometry": "polygon", 
@@ -23,7 +24,8 @@
         "type": "shape"
       }, 
       "attributes": {
-        "cache-features": "true"
+        "cache-features": "true", 
+        "deferred-labels": "true"
       }, 
       "class": "", 
       "geometry": "polygon", 
@@ -37,7 +39,8 @@
         "type": "shape"
       }, 
       "attributes": {
-        "cache-features": "true"
+        "cache-features": "true", 
+        "deferred-labels": "true"
       }, 
       "class": "", 
       "geometry": "polygon", 
@@ -54,7 +57,8 @@
         "type": "shape"
       }, 
       "attributes": {
-        "cache-features": "true"
+        "cache-features": "true", 
+        "deferred-labels": "true"
       }, 
       "class": "", 
       "geometry": "polygon", 
@@ -80,7 +84,8 @@
         "user": ""
       }, 
       "attributes": {
-        "cache-features": "true"
+        "cache-features": "true", 
+        "deferred-labels": "true"
       }, 
       "class": "", 
       "geometry": "polygon", 
@@ -103,7 +108,8 @@
         "user": ""
       }, 
       "attributes": {
-        "cache-features": "true"
+        "cache-features": "true", 
+        "deferred-labels": "true"
       }, 
       "class": "", 
       "geometry": "polygon", 
@@ -129,7 +135,8 @@
         "user": ""
       }, 
       "attributes": {
-        "cache-features": "true"
+        "cache-features": "true", 
+        "deferred-labels": "true"
       }, 
       "class": "", 
       "geometry": "linestring", 
@@ -155,7 +162,8 @@
         "user": ""
       }, 
       "attributes": {
-        "cache-features": "true"
+        "cache-features": "true", 
+        "deferred-labels": "true"
       }, 
       "class": "", 
       "geometry": "linestring", 
@@ -181,7 +189,8 @@
         "user": ""
       }, 
       "attributes": {
-        "cache-features": "true"
+        "cache-features": "true", 
+        "deferred-labels": "true"
       }, 
       "class": "", 
       "geometry": "polygon", 
@@ -207,7 +216,8 @@
         "user": ""
       }, 
       "attributes": {
-        "cache-features": "true"
+        "cache-features": "true", 
+        "deferred-labels": "true"
       }, 
       "class": "", 
       "geometry": "linestring", 
@@ -230,7 +240,8 @@
         "user": ""
       }, 
       "attributes": {
-        "cache-features": "true"
+        "cache-features": "true", 
+        "deferred-labels": "true"
       }, 
       "class": "", 
       "geometry": "linestring", 
@@ -254,7 +265,8 @@
         "user": ""
       }, 
       "attributes": {
-        "cache-features": "true"
+        "cache-features": "true", 
+        "deferred-labels": "true"
       }, 
       "class": "", 
       "geometry": "linestring", 
@@ -277,7 +289,8 @@
         "user": ""
       }, 
       "attributes": {
-        "cache-features": "true"
+        "cache-features": "true", 
+        "deferred-labels": "true"
       }, 
       "class": "", 
       "geometry": "linestring", 
@@ -300,7 +313,8 @@
         "user": ""
       }, 
       "attributes": {
-        "cache-features": "true"
+        "cache-features": "true", 
+        "deferred-labels": "true"
       }, 
       "class": "", 
       "geometry": "linestring", 
@@ -323,7 +337,8 @@
         "user": ""
       }, 
       "attributes": {
-        "cache-features": "true"
+        "cache-features": "true", 
+        "deferred-labels": "true"
       }, 
       "class": "", 
       "geometry": "linestring", 
@@ -346,7 +361,8 @@
         "user": ""
       }, 
       "attributes": {
-        "cache-features": "true"
+        "cache-features": "true", 
+        "deferred-labels": "true"
       }, 
       "class": "", 
       "geometry": "linestring", 
@@ -369,7 +385,8 @@
         "user": ""
       }, 
       "attributes": {
-        "cache-features": "true"
+        "cache-features": "true", 
+        "deferred-labels": "true"
       }, 
       "class": "", 
       "geometry": "linestring", 
@@ -392,7 +409,8 @@
         "user": ""
       }, 
       "attributes": {
-        "cache-features": "true"
+        "cache-features": "true", 
+        "deferred-labels": "true"
       }, 
       "class": "", 
       "geometry": "linestring", 
@@ -415,7 +433,8 @@
         "user": ""
       }, 
       "attributes": {
-        "cache-features": "true"
+        "cache-features": "true", 
+        "deferred-labels": "true"
       }, 
       "class": "", 
       "geometry": "linestring", 
@@ -438,7 +457,8 @@
         "user": ""
       }, 
       "attributes": {
-        "cache-features": "true"
+        "cache-features": "true", 
+        "deferred-labels": "true"
       }, 
       "class": "", 
       "geometry": "linestring", 
@@ -464,7 +484,8 @@
         "user": ""
       }, 
       "attributes": {
-        "cache-features": "true"
+        "cache-features": "true", 
+        "deferred-labels": "true"
       }, 
       "class": "", 
       "geometry": "linestring", 
@@ -487,7 +508,8 @@
         "user": ""
       }, 
       "attributes": {
-        "cache-features": "true"
+        "cache-features": "true", 
+        "deferred-labels": "true"
       }, 
       "class": "", 
       "geometry": "point", 
@@ -510,7 +532,8 @@
         "user": ""
       }, 
       "attributes": {
-        "cache-features": "true"
+        "cache-features": "true", 
+        "deferred-labels": "true"
       }, 
       "class": "", 
       "geometry": "linestring", 
@@ -533,7 +556,8 @@
         "user": ""
       }, 
       "attributes": {
-        "cache-features": "true"
+        "cache-features": "true", 
+        "deferred-labels": "true"
       }, 
       "class": "", 
       "geometry": "linestring", 
@@ -556,7 +580,8 @@
         "user": ""
       }, 
       "attributes": {
-        "cache-features": "true"
+        "cache-features": "true", 
+        "deferred-labels": "true"
       }, 
       "class": "", 
       "geometry": "linestring", 
@@ -579,7 +604,8 @@
         "user": ""
       }, 
       "attributes": {
-        "cache-features": "true"
+        "cache-features": "true", 
+        "deferred-labels": "true"
       }, 
       "class": "", 
       "geometry": "polygon", 
@@ -605,7 +631,8 @@
         "user": ""
       }, 
       "attributes": {
-        "cache-features": "true"
+        "cache-features": "true", 
+        "deferred-labels": "true"
       }, 
       "class": "", 
       "geometry": "polygon", 
@@ -631,7 +658,8 @@
         "user": ""
       }, 
       "attributes": {
-        "cache-features": "true"
+        "cache-features": "true", 
+        "deferred-labels": "true"
       }, 
       "class": "", 
       "geometry": "linestring", 
