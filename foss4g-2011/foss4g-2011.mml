@@ -477,14 +477,11 @@
         "dbname": "osm", 
         "extent": "-12138536.9733,4438914.03058,-11363019.7554,5024548.00134", 
         "geometry_field": "geometry", 
-        "host": "", 
         "key_field": "", 
         "max_size": "33", 
-        "password": "", 
         "port": "5432", 
-        "table": "(select geometry, type, name\nfrom osm_places where type in ('city','town') and name is not NULL order by population asc nulls first) as places", 
-        "type": "postgis", 
-        "user": ""
+        "table": "(select geometry, type, name\nfrom osm_places where type in ('city','town','village') and name is not NULL order by population asc nulls first) as places", 
+        "type": "postgis"
       }, 
       "class": "", 
       "geometry": "point", 

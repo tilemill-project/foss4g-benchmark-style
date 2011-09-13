@@ -79,8 +79,6 @@
 }
 #place::village[type='village'][zoom>=14] {
   text-name:'[name]';
-  text-label-position-tolerance:1;
-  text-min-path-length:96;
   text-face-name:@sans;
   text-placement:point;
   text-fill:#000;
