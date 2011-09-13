@@ -1,10 +1,7 @@
 /* ==== FONTS ===================================================== */
 
-@sans: "Lucida Sans Regular","DejaVu Sans Book";
-@sans_md: "Lucida Sans Demibold", "DejaVu Sans Book";
-@sans_bd: "Lucida Sans Bold", "DejaVu Sans Bold";
-@sans_it: "Lucida Sans Oblique", "DejaVu Sans Oblique";
-@sans_bd_it: "Lucida Sans Bold Oblique", " DejaVu Sans Bold Oblique";
+@sans: "DejaVu Sans Book";
+@sans_bd: "DejaVu Sans Bold";
 
 /* ==== PLACES ==================================================== */
 
