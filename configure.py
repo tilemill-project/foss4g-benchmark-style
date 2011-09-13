@@ -28,14 +28,18 @@ processed_p = shoreline_300 = boundaries = tm_world = None
 # http://thematicmapping.org/downloads/TM_WORLD_BORDERS-0.3.zip
 #tm_world = "/benchmarking/wms/2011/data/vector/osm_base_data/data/TM_WORLD_BORDERS-0.3.shp"
 
-# Increase postgres startup performance if you are only rendering a particular area by
-# specifying a bounding box to restrict queries. Format is "XMIN,YMIN,XMAX,YMAX" in the
-# same units as the database (probably spherical mercator meters). The
-# whole world is "-20037508.34,-20037508.34,20037508.34,20037508.34".
-# Leave blank to let Mapnik estimate.
-extent = "-12197658.2353032,4354107.45296023,-11359191.3507561,5097334.13614237"
+# srid of your postgres tables
+srid = 3857
 
+# postgres pool size, must be over # of threads
+max_size = 33
+
+# if you have > 2GB mem, turn this on
 feat_caching = True
+
+# testing http://trac.mapnik.org/ticket/870
+deferred_labels = True
+
 #################################
 
 import json
@@ -51,9 +55,10 @@ f.closed
 
 with open(mml, 'w') as f:
   for layer in newf["Layer"]:
+    layer["properties"] = {}
     if feat_caching:
-        layer["properties"] = {}
         layer["properties"]["cache-features"] = "true"
+    if deferred_labels:
         layer["properties"]["deferred-labels"] = "true"
     if layer["Datasource"]["type"] == "postgis":
       layer["Datasource"]["host"] = host
@@ -61,9 +66,9 @@ with open(mml, 'w') as f:
       layer["Datasource"]["dbname"] = dbname
       layer["Datasource"]["user"] = user
       layer["Datasource"]["password"] = password
-      layer["Datasource"]["extent"] = extent
-      layer["Datasource"]["srid"] = 3857
-      layer["Datasource"]["max_size"] = 33 
+      #layer["Datasource"]["extent"] = extent
+      layer["Datasource"]["srid"] = srid
+      layer["Datasource"]["max_size"] = max_size 
     file_ds = layer["Datasource"].get("file")
     if (file_ds):
         if shoreline_300 and "shoreline_300" in file_ds:
