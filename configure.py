@@ -34,6 +34,12 @@ srid = 3857
 # postgres pool size, must be over # of threads
 max_size = 33
 
+# if you have > 2GB mem, turn this on
+feat_caching = True
+
+# testing http://trac.mapnik.org/ticket/870
+deferred_labels = True
+
 #################################
 
 import json
@@ -49,9 +55,10 @@ f.closed
 
 with open(mml, 'w') as f:
   for layer in newf["Layer"]:
+    layer["properties"] = {}
     if feat_caching:
-        layer["properties"] = {}
         layer["properties"]["cache-features"] = "true"
+    if deferred_labels:
         layer["properties"]["deferred-labels"] = "true"
     if layer["Datasource"]["type"] == "postgis":
       layer["Datasource"]["host"] = host
