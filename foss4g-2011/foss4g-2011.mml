@@ -357,14 +357,11 @@
         "dbname": "osm", 
         "extent": "-12197658.2353,4354107.45296,-11359191.3508,5097334.13614", 
         "geometry_field": "geometry", 
-        "host": "", 
         "key_field": "", 
         "max_size": "33", 
-        "password": "", 
         "port": "5432", 
-        "table": "(select geometry, type, tunnel from osm_roads where type in ('living_street','residential','road','service','unclassified','unknown')\norder by z_order asc, st_length(geometry) asc) as road", 
-        "type": "postgis", 
-        "user": ""
+        "table": "(select geometry, name, type, tunnel from osm_roads where type in ('living_street','residential','road','service','unclassified','unknown')\norder by z_order asc, st_length(geometry) asc) as road", 
+        "type": "postgis"
       }, 
       "class": "", 
       "geometry": "linestring", 

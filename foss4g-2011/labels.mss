@@ -184,11 +184,11 @@
   text-size:11;
 }
 
-#roads_line[type='road'][zoom>14],
-#roads_line[type='residential'][zoom>14],
-#roads_line[type='living_street'][zoom>14],
-#roads_line[type='unclassified'][zoom>14],
-#roads_line[type='unknown'][zoom>14] {
+#minorroad_fill[type='road'][zoom>14],
+#minorroad_fill[type='residential'][zoom>14],
+#minorroad_fill[type='living_street'][zoom>14],
+#minorroad_fill[type='unclassified'][zoom>14],
+#minorroad_fill[type='unknown'][zoom>14] {
   text-name:'[name]';
   text-label-position-tolerance:1;
   text-min-path-length:96;
