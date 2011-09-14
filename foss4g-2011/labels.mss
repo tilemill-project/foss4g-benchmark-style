@@ -152,8 +152,13 @@
 
 /* ==== ROADS ===================================================== */
 
-#roads_line[type='motorway'][zoom>9],
-#roads_line[type='trunk'][zoom>9] {
+#roads10[zoom=10],
+#roads11[zoom=11],
+#roads12[zoom>=12][zoom<=13],
+#roads14[zoom>=14][zoom<=15],
+#roads16[zoom>=16] {
+  [type='motorway'],
+  [type='trunk'] {
   text-name:'[ref]';
   text-label-position-tolerance:1;
   text-min-path-length:96;
@@ -165,11 +170,13 @@
   [zoom=11] { text-min-distance:70; }
   [zoom=12] { text-min-distance:80; }
   [zoom=13] { text-min-distance:100; }
+  }
 }
 
-#roads_line[type='primary'][zoom>12],
-#roads_line[type='secondary'][zoom>13],
-#roads_line[type='tertiary'][zoom>13] {
+#roads12[zoom=13],
+#roads14[zoom>=14][zoom<=15],
+#roads16[zoom>=16] {
+  [type='primary'] {
   text-name:'[name]';
   text-label-position-tolerance:1;
   text-min-path-length:96;
@@ -180,13 +187,13 @@
   text-halo-radius:1;
   text-min-distance:60;
   text-size:11;
+  }
 }
 
-#minorroad_fill[type='road'][zoom>14],
-#minorroad_fill[type='residential'][zoom>14],
-#minorroad_fill[type='living_street'][zoom>14],
-#minorroad_fill[type='unclassified'][zoom>14],
-#minorroad_fill[type='unknown'][zoom>14] {
+#roads14[zoom>=14][zoom<=15],
+#roads16[zoom>=16] {
+  [type='secondary'],
+  [type='tertiary'] {
   text-name:'[name]';
   text-label-position-tolerance:1;
   text-min-path-length:96;
@@ -197,6 +204,27 @@
   text-halo-radius:1;
   text-min-distance:60;
   text-size:11;
+  }
+}
+
+#roads14[zoom=15],
+#roads16[zoom>=16] {
+  [type='road'],
+  [type='residential'],
+  [type='living_street'],
+  [type='unclassified'],
+  [type='unknown'] {
+  text-name:'[name]';
+  text-label-position-tolerance:1;
+  text-min-path-length:96;
+  text-face-name:@sans;
+  text-placement:line;
+  text-fill:#222;
+  text-halo-fill:#fff;
+  text-halo-radius:1;
+  text-min-distance:60;
+  text-size:11;
+  }
 }
 
 /* ==== WATERWAYS ================================================= */
