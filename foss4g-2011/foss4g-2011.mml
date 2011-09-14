@@ -402,33 +402,6 @@
     {
       "Datasource": {
         "dbname": "osm", 
-        "extent": "-12197658.2353,4354107.45296,-11359191.3508,5097334.13614", 
-        "geometry_field": "geometry", 
-        "host": "", 
-        "id": "bridge", 
-        "key_field": "", 
-        "max_size": 33, 
-        "password": "", 
-        "port": "5432", 
-        "project": "foss4g-2011", 
-        "srs": "+init=epsg:3857", 
-        "table": "(select geometry, type, bridge, z_order\nfrom osm_roads where bridge = 1\norder by z_order) as road", 
-        "type": "postgis", 
-        "user": ""
-      }, 
-      "class": "", 
-      "geometry": "linestring", 
-      "id": "bridge", 
-      "name": "bridge", 
-      "properties": {
-        "cache-features": "true", 
-        "deferred-labels": "true"
-      }, 
-      "srs": "+init=epsg:3857"
-    }, 
-    {
-      "Datasource": {
-        "dbname": "osm", 
         "extent": "-12138536.9733,4438914.03058,-11363019.7554,5024548.00134", 
         "geometry_field": "geometry", 
         "key_field": "", 
