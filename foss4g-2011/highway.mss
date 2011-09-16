@@ -516,7 +516,7 @@
 /* ---- Pedestrian ------------------------------------------------ */
 #track[type='pedestrian'][zoom>11] {
   line-color:@ped_line;
-  [zoom=12]{ line-width:0.75; line-rasterizer:fast; }
+  [zoom=12]{ line-width:0.75; }
   [zoom=13]{ line-width:1 + 1; }
   [zoom=14]{ line-width:1.5 + 1; }
   [zoom=15]{ line-width:2 + 1; }
